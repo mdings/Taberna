@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700i');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import "../node_modules/reset-css/reset.scss";
+@import "includes/vars";
+@import "includes/components/buttons";
+@import "includes/components/top";
+
+
+*,
+*:before,
+*:after {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Lora, serif;
+    line-height: 1.8;
+    font-weight: 400;
+    background-color:$mainColor;
+    color: #fff;
+}
+
+// Main classes
+.container {
+
+    padding: 0 $gutterWidth;
+    width: 100%;
+    max-width: $maxWidth;
+    margin: 0 auto;
+}
+
+h2 {
+
+    display: inline-block;
+    font-family: Oswald;
+    text-transform: uppercase;
+    font-size: 35px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #fff;
+
+    & + * {
+
+        margin-top: 20px;
+    }
+
+    &:after {
+
+        display: block;
+        content: '';
+        transform: translateY(-3px);
+        border-bottom: 3px solid #fff;
+    }
+}
+.section__intro {
+
+    background-image: url(../img/header.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    text-align: center;
+    position: relative;
+
+    &:before {
+
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(#000, .6);
+        z-index: 1;
+    }
+
+    .container {
+
+        max-width: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 9;
+    }
+}
+
+.nav__main {
+
+    font-family: Oswald, sans-serif;
+    margin-top: 15px;
+    text-transform: uppercase;
+
+    li {
+
+        display: inline-block;
+        padding: 0 6px;
+    }
+
+    a {
+
+        font-family: arial;
+        padding: 3px 6px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.reachability {
+
+    margin-bottom: 15px;
+    display: flex;
+    font-size: 15px;
+    font-style: italic;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__hours {
+
+        text-align: left;
+    }
+
+    &__contact {
+
+        text-align: right;
+    }
+}
+
+.section__about {
+
+    display: flex;
+    text-align: center;
+
+    & > * {
+
+        padding: 40px;
+        background-color: mix($mainColor, #000, 70%);
+        width: 50%;
+
+        &:first-child {
+
+            background-color: $mainColor;
+
+            .about__content {
+
+                float: right;
+                width: 100%;
+            }
+        }
+    }
+
+    .about__content {
+
+        // padding: 40px $gutterWidth;
+        max-width: $maxWidth / 2;
+    }
+}
+
+.section__pics {
+
+    column-count: 3;
+    column-gap: 0;
+
+    & > * {
+
+        display: block;
+        width: 100%;
+    }
+}
+
+.section__menu {
+
+    text-align: center;
+    color: #333;
+    background-color: #fff;
+
+    .container {
+
+        width: 100%;
+        max-width: $maxWidth;
+    }
+
+    .menu {
+
+        & + * {
+
+            margin-top: 15px;
+        }
+
+        &__name {
+
+             text-align: left;
+            line-height: 1;
+            font-size: 30px;
+            position: relative;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 10px 20px 10px 60px;
+            border: 3px solid $mainColor;
+
+            &:before {
+
+                display: block;
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                content: '';
+                width: 48px;
+                height: 48px;
+                background-image: url('../img/arrowdown.svg');
+            }
+        }
+
+        &__intro {
+
+            text-align: left;
+        }
+
+        &__content {
+
+            display: none;
+        }
+    }
+
+
+    .dish {
+
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+
+        &__price {
+
+            white-space: nowrap;
+        }
+    }
+
+    em {
+
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        font-style: italic;
+    }
+}
