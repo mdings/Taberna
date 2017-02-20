@@ -174,7 +174,36 @@ em {
     text-align: center;
     color: #000;
     background-color: #fff;
-    padding: 50px 60px 60px;
+    padding: 120px 60px 60px;
+    position: relative;
+
+    &:before {
+
+        position: absolute;
+        z-index: 9;
+        content: '';
+        background: #bc8d4b;
+        top: 0;
+        width: 200px;
+        height: 2px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-45deg);
+        transform-origin: 50% 50%;
+    }
+
+    &:after {
+
+        position: absolute;
+        z-index: 9;
+        content: '';
+        background: #bc8d4b;
+        top: 0;
+        width: 200px;
+        height: 2px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        transform-origin: 50% 50%;
+    }
 }
 
 .section__about {
