@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400|Playfair+Display:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400|Playfair+Display:400,400i|Amatic+SC');
 
 @import "../node_modules/reset-css/reset.scss";
 @import "includes/vars";
 @import "includes/components/buttons";
+@import "includes/components/headlines";
 @import "includes/components/top";
 
 
@@ -35,50 +36,18 @@ body {
 
     &--small {
 
-        max-width: 600px;
+        max-width: 800px;
     }
 }
 
 h1 {
 
-    font-family: 'Playfair Display', serif;
-    display: inline-block;
-    font-size: 45px;
-    line-height: 1.2;
-    letter-spacing: 0;
-    color: #333;
-    border-bottom: 3px solid #333;
-
-    & + * {
-
-        margin-top: 30px;
-    }
+    @extend %headline;
 }
 
 h2 {
 
-    color: #333;
-    border-bottom: 3px solid #333;
-    display: inline-block;
-    font-family: 'Playfair Display', serif;
-    font-size: 45px;
-    line-height: 1.2;
-    letter-spacing: 0;
-    // letter-spacing: 2px;
-    // border-bottom: 1px solid #fff;
-
-    & + * {
-
-        margin-top: 30px;
-    }
-
-    // &:after {
-
-    //     display: block;
-    //     content: '';
-    //     transform: translateY(-3px);
-    //     border-bottom: 3px solid #fff;
-    // }
+    @extend %headline;
 }
 
 p {
@@ -96,7 +65,6 @@ em {
 
 .section__header {
 
-    font-family: 'Playfair Display', serif;
     background-image: url(../img/header.jpg);
     background-size: cover;
     background-position: center;
@@ -154,7 +122,6 @@ em {
     margin-bottom: 15px;
     display: flex;
     font-size: 15px;
-    font-style: italic;
     justify-content: space-between;
     align-items: flex-end;
 
@@ -174,7 +141,7 @@ em {
     text-align: center;
     color: #000;
     background-color: #fff;
-    padding: 120px 60px 60px;
+    padding: 120px 60px;
     position: relative;
 
     &:before {
@@ -182,9 +149,9 @@ em {
         position: absolute;
         z-index: 9;
         content: '';
-        background: #bc8d4b;
+        background: $tertiaryColor;
         top: 0;
-        width: 200px;
+        width: 100px;
         height: 2px;
         left: 50%;
         transform: translateX(-50%) rotate(-45deg);
@@ -196,9 +163,9 @@ em {
         position: absolute;
         z-index: 9;
         content: '';
-        background: #bc8d4b;
+        background: $tertiaryColor;
         top: 0;
-        width: 200px;
+        width: 100px;
         height: 2px;
         left: 50%;
         transform: translateX(-50%) rotate(45deg);
@@ -213,14 +180,14 @@ em {
 
     & > * {
 
-        padding: 50px 30px 60px;
-        background-color: mix($mainColor, #000, 70%);
+        padding: 50px 70px 60px;
+        background-color: $tertiaryColor;
+        color: #000;
         width: 50%;
 
         &:first-child {
 
             text-align: left;
-            background-color: $mainColor;
 
             .about__content {
 
@@ -230,10 +197,29 @@ em {
         }
     }
 
+    .about__catering {
+
+        position: relative;
+
+        &:before {
+
+            position: absolute;
+            display: block;
+            content: '';
+            width: 1px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: 80%;
+            background: mix($tertiaryColor, #000, 80%);
+        }
+    }
+
     .about__content {
 
         // padding: 40px $gutterWidth;
         max-width: $maxWidth / 2;
+        position: relative;
     }
 }
 
@@ -273,13 +259,12 @@ em {
 
         &__name {
 
-            font-size: 35px;
-            font-family: 'Playfair Display', serif;
+            font-size: 45px;
+            font-family: 'Amatic SC', serif;
         }
 
         &__intro {
 
-            font-size: 13px;
             margin: 20px 0 40px;
         }
 
@@ -302,13 +287,22 @@ em {
                 justify-content: space-between;
                 width: 50%;
                 padding: 0 20px;
+                margin-bottom: 20px;
+
 
                 span:last-child {
 
-                    font-weight: normal;
+                    font-weight: 200;
                     font-style: italic;
+                    font-size: 14px;
                     flex: 0 1 100%;
                     text-align: left;
+
+                    .item__price,
+                    .bold {
+
+                        font-weight: bolder;
+                    }
                 }
             }
         }
