@@ -12,9 +12,42 @@
 </head>
 <body>
 
-    <!-- @include _intro.html -->
+    <div class="section__header">
+    <button class="hamburger hamburger--spin" type="button" aria-label="menu" data-hamburger>
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+        <span class="hamburger-label">Menu</span>
+    </button>
+    <div class="container">
+        <nav class="nav__main">
+            <ul>
+                <li><a href="#about">Over Taberna</a></li>
+                <li><a href="#pictures">Sfeerimpressie</a></li>
+                <li><a href="#menu">Menukaart &amp; delicatessen</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <img src="http://matchthemes.com/demohtml/dina/images/home/taste-food.png" alt="Logo">
+        </div>
+        <section class="reachability">
+            <div class="reachability__hours">
+                Dinsdag, woensdag en zaterdag: 10:00u - 18:00u<br>
+                Donderdag en vrijdag: 10:00u - 21:00u<br>
+                Zondag en maandag: gesloten
+            </div>
+            <div class="reachability__contact">
+                Taberna Weert<br>
+                Beekstraat 60a<br>
+                <a href="tel://0495586339">Tel: 0495 586 339</a><br>
+                <a href="mailto:info@tarbernaweert.nl">info@tabernaweert.nl</a>
+            </div>
+        </section>
+    </div>
+</div>
 
-    <section class="section__intro">
+    <section class="section__intro" id="about">
         <div class="container container--small">
             <h1>Over Taberna</h1>
             <p>
@@ -31,51 +64,53 @@
     </section>
 
     <section class="section__about">
-        <section class="about__taberna">
-            <div class="about__content">
-                <h2>Delicatessen</h2>
-                <div>
-                    <p>
-                        In het winkelgedeelte hebben we een vast assortiment in authentieke producten uit de ‘Mediterraanse wereld’, maar daarnaast maken we ook veel producten zelf, welke ook te koop zijn. <br>
-                        Denk hierbij aan olijfolie, balsamico, vleeswaren, kazen, tapenades, olijfjes en nog veel meer!
-                    </p>
-                    <p>
-                        Buiten ons vast assortiment zullen we ook altijd wisselende producten hebben, zodat je bezoek aan Taberna iedere keer weer een verrassing zal zijn.
-                    </p>
-                    <p>
-                        We werken samen met (veelal kleine) leveranciers welke rechtstreeks importeren vanuit onder andere Spanje en Italië.<br>
-                        Hebben we iets niet in huis wat je graag zou willen hebben, we zullen ons best doen dit de volgende keer in huis te hebben voor je!
-                    </p>
-                    <p>
-                        <strong>Bij iedere 10 euro aan delicatessen in de winkel krijg je een stempel. Heb je een volle spaarkaart(12 stempels) krijg je een cadeaubon van ons!</strong>
-                    </p>
+        <div class="container">
+            <section class="about__taberna">
+                <div class="about__content">
+                    <h2>Delicatessen</h2>
+                    <div>
+                        <p>
+                            In het winkelgedeelte hebben we een vast assortiment in authentieke producten uit de ‘Mediterraanse wereld’, maar daarnaast maken we ook veel producten zelf, welke ook te koop zijn. <br>
+                            Denk hierbij aan olijfolie, balsamico, vleeswaren, kazen, tapenades, olijfjes en nog veel meer!
+                        </p>
+                        <p>
+                            Buiten ons vast assortiment zullen we ook altijd wisselende producten hebben, zodat je bezoek aan Taberna iedere keer weer een verrassing zal zijn.
+                        </p>
+                        <p>
+                            We werken samen met (veelal kleine) leveranciers welke rechtstreeks importeren vanuit onder andere Spanje en Italië.<br>
+                            Hebben we iets niet in huis wat je graag zou willen hebben, we zullen ons best doen dit de volgende keer in huis te hebben voor je!
+                        </p>
+                        <p>
+                            <strong>Bij iedere 10 euro aan delicatessen in de winkel krijg je een stempel. Heb je een volle spaarkaart(12 stempels) krijg je een cadeaubon van ons!</strong>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="about__catering">
-            <div class="about__content">
-                <h2>Catering &amp; geschenken</h2>
-                <div>
-                    <p>
-                        <em>Stel je eens voor, authentieke Mediterraanse hapjes gemaakt met de lekkerste ingrediënten.. </em>
-                    </p>
-                    <p>
-                        Heb je een feestje, speciale gelegenheid of gewoon zin in een lekker hapje voor thuis bij de borrel? Bij Taberna zijn hier voldoende mogelijkheden voor! Wij kunnen alles naar wens maken, voor 1 tot 100 personen! Vraag naar de mogelijkheden, wij zijn heel flexibel!
-                    </p>
-                    <p>
-                        Een selectie van originele en ambachtelijke delicatessen maakt een geschenk zeer bijzonder.<br>
-                        Wij stellen (samen met jou) een mooi pakket samen. Ook hier zijn weer diverse mogelijkheden qua grootte en prijs.
-                    </p>
+            </section>
+            <section class="about__catering">
+                <div class="about__content">
+                    <h2>Catering &amp; geschenken</h2>
+                    <div>
+                        <p>
+                            <em>Stel je eens voor, authentieke Mediterraanse hapjes gemaakt met de lekkerste ingrediënten.. </em>
+                        </p>
+                        <p>
+                            Heb je een feestje, speciale gelegenheid of gewoon zin in een lekker hapje voor thuis bij de borrel? Bij Taberna zijn hier voldoende mogelijkheden voor! Wij kunnen alles naar wens maken, voor 1 tot 100 personen! Vraag naar de mogelijkheden, wij zijn heel flexibel!
+                        </p>
+                        <p>
+                            Een selectie van originele en ambachtelijke delicatessen maakt een geschenk zeer bijzonder.<br>
+                            Wij stellen (samen met jou) een mooi pakket samen. Ook hier zijn weer diverse mogelijkheden qua grootte en prijs.
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </section>
 
     <div class="totop">
-        <a class="button" href="#">Naar boven</a>
+        <a class="button" href="javascript:void(0)" data-totop>Naar boven</a>
     </div>
 
-    <section class="section__pics">
+    <section class="section__pics" data-carousel id="picture">
         <img src="http://lorempixel.com/400/300/food/1">
         <img src="http://lorempixel.com/400/300/food/2">
         <img src="http://lorempixel.com/400/300/food/3">
@@ -87,10 +122,10 @@
     </section>
 
     <div class="totop">
-        <a class="button" href="#">Naar boven</a>
+        <a class="button" href="javascript:void(0)" data-totop>Naar boven</a>
     </div>
 
-    <section class="section__menu">
+    <section class="section__menu" id="menu">
         <div class="container container--small">
             <h2>Menukaart &amp; Delicatessen</h2>
             <p>
@@ -499,7 +534,7 @@
     </section>
 
     <div class="totop">
-        <a class="button" href="#">Naar boven</a>
+        <a class="button" href="javascript:void(0)" data-totop>Naar boven</a>
     </div>
 
     <script src="js/main.js"></script>
