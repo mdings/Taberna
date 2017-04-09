@@ -10,9 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "flickity": "^2.0.5",
+    "github-pages": "^3.0.2",
+    "hamburgers": "^0.8.1",
     "imagesloaded": "^4.1.1",
     "jquery": "^3.1.1",
     "ordnung-js": "^1.0.2",
-    "reset-css": "^2.2.0"
+    "reset-css": "^2.2.0",
+    "zenscroll": "^4.0.0"
   }
 }
