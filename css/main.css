@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,400|Playfair+Display:400,400i|Amatic+SC");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -1166,7 +1165,7 @@ body {
   font-family: 'Merriweather', serif;
   font-weight: 300;
   font-size: 15px;
-  background-color: #262626;
+  background-color: #fff;
   color: #fff; }
   body.is-menu-active {
     overflow: hidden; }
@@ -1235,7 +1234,9 @@ em {
     position: relative;
     z-index: 9; }
   .section__header a {
-    color: #BDA488; }
+    color: #e8e6bd; }
+  .section__header .logo img {
+    max-width: 360px; }
 
 @media (max-width: 767px) {
   .nav__main {
@@ -1309,17 +1310,20 @@ em {
         text-align: right; } }
 
 .section__intro {
-  padding-top: 55px;
+  padding-top: 75px;
   text-align: center;
   color: #000;
   background-color: #fff;
   position: relative;
-  padding-bottom: 30px; }
+  padding-bottom: 100px;
+  background-image: url("../img/taberna-bg.jpg");
+  background-size: cover;
+  background-position: center; }
   .section__intro:before {
     position: absolute;
     z-index: 2;
     content: '';
-    background: #BDA488;
+    background: #e8e6bd;
     top: 0;
     width: 100px;
     height: 2px;
@@ -1332,7 +1336,7 @@ em {
     position: absolute;
     z-index: 2;
     content: '';
-    background: #BDA488;
+    background: #e8e6bd;
     top: 0;
     width: 100px;
     height: 2px;
@@ -1343,11 +1347,11 @@ em {
             transform-origin: 50% 50%; }
 
 .section__about {
-  background-color: #BDA488;
+  background-color: #e8e6bd;
   color: #000;
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-bottom: 50px; }
   @media (max-width: 767px) {
     .section__about section:last-child {
       margin-top: 30px; } }
@@ -1377,20 +1381,69 @@ em {
                 transform: translateY(-50%);
         left: 0;
         height: 100%;
-        background: #97836d; } }
+        background: #bab897; } }
 
-@media (min-width: 768px) {
-  .section__pics {
-    -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
-    -webkit-column-gap: 0;
-       -moz-column-gap: 0;
-            column-gap: 0; } }
+.section__pics {
+  background-color: #fff;
+  max-width: 1300px;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .section__pics {
+      padding: 40px 0;
+      -webkit-column-count: 3;
+         -moz-column-count: 3;
+              column-count: 3;
+      -webkit-column-gap: 0;
+         -moz-column-gap: 0;
+              column-gap: 0; } }
+  .section__pics img {
+    width: 100%;
+    display: block; }
 
-.section__pics img {
-  width: 100%;
-  display: block; }
+.section__events {
+  background-color: #333;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px; }
+  .section__events h2 {
+    color: #fff; }
+  .section__events ul {
+    max-width: 800px;
+    margin: 40px auto; }
+  .section__events li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 2px solid #AF9164;
+    color: #AF9164;
+    padding: 7px 10px;
+    position: relative;
+    border-top: none; }
+    .section__events li:first-child {
+      border-top: 2px solid #AF9164; }
+    .section__events li .date {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-right: 20px;
+      width: 80px; }
+      .section__events li .date:after {
+        display: block;
+        content: '';
+        left: 70px;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        border-right: 2px dotted #AF9164;
+        position: absolute;
+        opacity: .5; }
+    .section__events li em {
+      font-size: 30px;
+      display: block;
+      font-style: normal;
+      line-height: 1; }
 
 .section__menu {
   padding-top: 30px;
@@ -1464,14 +1517,9 @@ em {
 
 .item__dots {
   margin: 0 3px;
-  background: -webkit-radial-gradient(#d5d5d5 40%, transparent 10%);
-  background: radial-gradient(#d5d5d5 40%, transparent 10%);
   background-size: 4px 4px;
   background-repeat: repeat-x;
   height: 3px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
-
-.item__price:before {
-  content: '€'; }
