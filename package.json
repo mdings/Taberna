@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "gh-pages -t -d build -b gh-pages"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,8 @@
     "ordnung-js": "^1.0.2",
     "reset-css": "^2.2.0",
     "zenscroll": "^4.0.0"
+  },
+  "devDependencies": {
+    "github-pages": "^3.0.2"
   }
 }
