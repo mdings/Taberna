@@ -123,7 +123,7 @@ em {
         right: 0;
         bottom: 0;
         left: 0;
-        background: rgba(#000, .6);
+        background: rgba(#000, .7);
         z-index: 1;
     }
 
@@ -367,6 +367,7 @@ em {
 
     @include media(">=tablet") {
 
+        padding: 5px;
         column-count: 3;
         column-gap: 0;
     }
@@ -379,7 +380,12 @@ em {
     img {
 
         width: 100%;
-        display: block
+        display: block;
+
+        @include media(">=tablet") {
+
+            padding: 5px;
+        }
     }
 }
 

@@ -15,6 +15,13 @@ const setupFlickity = () => {
 
     if(mq.matches) {
 
+        // setup flickity images
+        const masonryImages = document.querySelectorAll('[data-masonry]')
+        Array.prototype.forEach.call(masonryImages, image => {
+
+            image.setAttribute('src', image.getAttribute('data-src'))
+        })
+
         imagesLoaded(gallery, () => {
 
             flkty = new Flickity(gallery, {
@@ -28,6 +35,13 @@ const setupFlickity = () => {
 
             flkty.destroy()
         }
+
+        // setup masonry images
+        const masonryImages = document.querySelectorAll('[data-masonry]')
+        Array.prototype.forEach.call(masonryImages, image => {
+
+            image.setAttribute('src', image.getAttribute('data-masonry'))
+        })
     }
 
 }
