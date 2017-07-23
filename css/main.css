@@ -1035,6 +1035,7 @@ em {
   margin: 0 auto; }
   @media (min-width: 768px) {
     .section__pics {
+      padding: 5px;
       column-count: 3;
       column-gap: 0; } }
   @media (min-width: 1301px) {
