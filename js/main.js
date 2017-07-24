@@ -54,9 +54,11 @@ burger.addEventListener('click', function (e) {
 
     document.body.classList.toggle(MENU_ACTIVE_CLASS);
     burger.classList.toggle('is-active');
-});[].forEach.call(menu, function (link) {
+});
 
-    link.addEventListener('click', function () {
+Array.prototype.forEach.call(menu, function (link) {
+
+    link.addEventListener('click', function (e) {
 
         if (document.body.classList.contains(MENU_ACTIVE_CLASS)) {
 
@@ -65,15 +67,18 @@ burger.addEventListener('click', function (e) {
 
         var toScrollSection = link.getAttribute('href').replace(/\#/, '');
         zenscroll.to(document.getElementById(toScrollSection));
-        return false;
+        e.preventDefault();
     });
 });
 
-var toTopLinks = document.querySelectorAll('[data-totop]');[].forEach.call(toTopLinks, function (link) {
+var toTopLinks = document.querySelectorAll('[data-totop]');
 
-    link.addEventListener('click', function () {
+Array.prototype.forEach.call(toTopLinks, function (link) {
+
+    link.addEventListener('click', function (e) {
 
         zenscroll.toY(0);
+        e.preventDefault();
         return false;
     });
 });
