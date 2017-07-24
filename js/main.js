@@ -56,9 +56,9 @@ burger.addEventListener('click', e => {
     burger.classList.toggle('is-active')
 })
 
-;[].forEach.call(menu, link => {
+Array.prototype.forEach.call(menu, link => {
 
-    link.addEventListener('click', () => {
+    link.addEventListener('click', e => {
 
         if (document.body.classList.contains(MENU_ACTIVE_CLASS)) {
 
@@ -67,17 +67,18 @@ burger.addEventListener('click', e => {
 
         const toScrollSection = link.getAttribute('href').replace(/\#/, '')
         zenscroll.to(document.getElementById(toScrollSection))
-        return false;
+        e.preventDefault()
     })
 })
 
 const toTopLinks = document.querySelectorAll('[data-totop]')
 
-;[].forEach.call(toTopLinks, (link) => {
+Array.prototype.forEach.call(toTopLinks, (link) => {
 
-    link.addEventListener('click', () => {
+    link.addEventListener('click', e => {
 
         zenscroll.toY(0)
+        e.preventDefault()
         return false;
     })
 })
