@@ -900,9 +900,14 @@ em {
     z-index: 9; }
   .section__header a {
     color: #e8e6bd; }
-  .section__header .logo img {
-    width: calc(100vw - 50px);
-    max-width: 360px; }
+  .section__header .logo {
+    margin-top: 60px; }
+    @media (min-width: 768px) {
+      .section__header .logo {
+        margin-top: 0; } }
+    .section__header .logo img {
+      width: calc(100vw - 50px);
+      max-width: 360px; }
 
 @media (max-width: 767px) {
   .nav__main {
