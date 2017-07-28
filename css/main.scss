@@ -145,6 +145,13 @@ em {
 
     .logo {
 
+        margin-top: 60px;
+
+        @include media(">=tablet") {
+
+            margin-top: 0;
+        }
+
         img {
 
             width: calc(100vw - 50px);
