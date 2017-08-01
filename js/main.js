@@ -2,7 +2,6 @@
 'use strict';
 
 window.noZensmooth = true;
-
 var imagesLoaded = require('imagesloaded');
 var Flickity = require('flickity');
 var zenscroll = require('zenscroll');
