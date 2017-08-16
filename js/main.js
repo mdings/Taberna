@@ -1,5 +1,4 @@
 window.noZensmooth = true
-
 const imagesLoaded = require('imagesloaded')
 const Flickity = require('flickity')
 const zenscroll = require('zenscroll')
