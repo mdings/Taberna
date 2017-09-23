@@ -1,6 +1,1 @@
-body {
-  font: 12px Helvetica, Arial, sans-serif;
-}
-a.button {
-  border-radius: 5px;
-}
+body{margin:0;padding:20px;display:-webkit-box;display:-ms-flexbox;display:flex;height:20px}
