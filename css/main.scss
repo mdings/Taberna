@@ -12,7 +12,6 @@ $hamburger-layer-color: #fff;
 @import "includes/vendor/flickity";
 @import "includes/vendor/flickity-overwrites";
 
-
 *,
 *:before,
 *:after {
@@ -20,6 +19,15 @@ $hamburger-layer-color: #fff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.announcement {
+
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    background-color: #DB504A;
+    font-style: italic;
 }
 
 body {
