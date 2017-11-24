@@ -21,6 +21,34 @@ $hamburger-layer-color: #fff;
     box-sizing: border-box;
 }
 
+.announcement {
+
+    display: block;
+    text-align: center;
+    background-color: #DB2B39;
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+
+    span {
+
+        display: inline-block;
+        background-color: #F0CEA0;
+        color: mix(#000,#DB2B39,20%);
+        padding: 12px 14px;
+        border-radius: 5px;
+        display: inline-flex;
+        transition: all 150ms ease-out;
+        margin: 0 8px;
+
+        &:hover {
+
+            background-color: mix(#000,#DB2B39,20%);
+            color: #fff;
+        }
+    }
+}
+
 body {
 
     line-height: 1.6;
@@ -525,10 +553,28 @@ em {
                 margin-bottom: 20px;
                 width: 100%;
 
+                @include media("<desktop") {
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
                 .item {
 
                     display: block;
                     font-weight: 400;
+
+                    @include media("<desktop") {
+
+                        flex: 0 1 100%;
+
+                        &__price {
+
+                            margin-left: 10px;
+                            order: 10;
+                        }
+                    }
                 }
 
                 @include media(">=desktop") {
@@ -552,8 +598,13 @@ em {
                     font-weight: 200;
                     font-style: italic;
                     font-size: 14px;
-                    flex: 0 1 100%;
-                    text-align: left;
+
+                    @include media(">=desktop") {
+
+                        flex: 0 1 100%;
+                        text-align: left;
+                    }
+
 
                     .item__price,
                     .bold {
@@ -570,6 +621,7 @@ em {
 
     &__dots {
 
+        display: none;
         margin: 0 3px;
         // background: radial-gradient(#d5d5d5 40%, transparent 10%);
         background-size: 4px 4px;
