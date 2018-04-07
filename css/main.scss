@@ -22,13 +22,18 @@ $hamburger-layer-color: #fff;
 }
 
 .announcement {
-
     display: block;
     text-align: center;
     background-color: #DB2B39;
     padding: 8px 0;
     color: #fff;
     text-decoration: none;
+
+    a {
+        font-style: italic;
+        color: #F0CEA0;
+        font-size: 16px;
+    }
 
     span {
 
@@ -108,7 +113,7 @@ em {
 
 .section__header {
 
-    background-image: url(../img/header.jpg);
+    background-image: url('../img/header.jpg');
     background-size: cover;
     background-position: center;
     height: 750px;
@@ -411,7 +416,7 @@ em {
         padding: 40px 0;
     }
 
-    img {
+    picture, img {
 
         width: 100%;
         display: block;

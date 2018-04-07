@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/parcel-bundler/bin/cli.js index.html",
+    "build": "./node_modules/parcel-bundler/bin/cli.js build index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "gh-pages -t -d build -b gh-pages"
   },
@@ -11,16 +13,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^8.2.0",
     "flickity": "^2.0.5",
     "github-pages": "^3.0.2",
     "hamburgers": "^0.8.1",
     "imagesloaded": "^4.1.1",
     "jquery": "^3.1.1",
     "ordnung-js": "^1.0.2",
+    "postcss-modules": "^1.1.0",
     "reset-css": "^2.2.0",
     "zenscroll": "^4.0.0"
   },
   "devDependencies": {
-    "github-pages": "^3.0.2"
+    "github-pages": "^3.0.2",
+    "node-sass": "^4.7.2",
+    "posthtml-include": "^1.1.0"
   }
 }
