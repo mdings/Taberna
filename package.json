@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
+    "perf": "hiper -n 50 taberna.nl",
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "gh-pages -t -d build -b gh-pages"
   },
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "github-pages": "^3.0.2",
+    "hiper": "0.0.14",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.7.0",
     "posthtml-include": "^1.1.0"
