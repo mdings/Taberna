@@ -98,6 +98,13 @@ h2 {
     @extend %headline;
 }
 
+h3 {
+
+    font-weight: bolder;
+    display: block;
+    font-size: 18px;
+}
+
 p {
 
     & + * {
@@ -327,6 +334,29 @@ em {
         transform: translateX(-50%) rotate(45deg);
         transform-origin: 50% 50%;
     }
+}
+
+.section__specials {
+    // background-color: #E9F1F7;
+    text-align: center;
+    padding-bottom: 50px;
+    color: #000;
+    position: relative;
+
+    h2 {
+        padding-top: 30px;
+    }
+    .container {
+        &:before {
+            display: block;
+            content: "";
+            background-image: url('../img/hr-12.png');
+            height: 22px;
+            background-repeat: repeat-x;
+            background-position: center center;
+        }
+    }
+    
 }
 
 .section__about {
