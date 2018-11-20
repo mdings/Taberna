@@ -36,8 +36,10 @@ $hamburger-layer-color: #fff;
     text-decoration: none;
 
     a {
+        font-weight: bolder;
         font-style: italic;
-        color: #F0CEA0;
+        color: #fff;
+        // color: #F0CEA0;
         font-size: 16px;
     }
 
@@ -531,6 +533,10 @@ em {
 
         //     margin-top: 20px;
         // }
+    }
+
+    strong {
+        font-style: italic;
     }
 }
 
