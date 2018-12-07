@@ -9,6 +9,7 @@ $hamburger-layer-color: #fff;
 @import "includes/components/buttons";
 @import "includes/components/headlines";
 @import "includes/components/top";
+@import "includes/components/forms";
 @import "includes/vendor/flickity";
 @import "includes/vendor/flickity-overwrites";
 
@@ -30,7 +31,7 @@ $hamburger-layer-color: #fff;
 .announcement {
     display: block;
     text-align: center;
-    background-color: #DB2B39;
+    background-color: $errorColor;
     padding: 8px 0;
     color: #fff;
     text-decoration: none;
@@ -235,6 +236,11 @@ em {
     }
 
     li {
+        
+        &:last-child {
+            border-radius: 2px;
+            border: 2px solid rgba(#fff, .3);
+        }
 
         @include media("<tablet") {
 
@@ -256,6 +262,7 @@ em {
         font-size: 20px;
         text-decoration: none;
         color: #fff;
+
 
         @include media(">=tablet") {
 
@@ -684,4 +691,11 @@ em {
     //         content: '€'
     //     }
     // }
+}
+
+.section__form {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #333;
+    text-align: center;
 }
