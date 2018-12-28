@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
+    "now-build": "parcel build index.html",
+    "dev": "parcel index.html",
     "build": "parcel build index.html",
     "perf": "hiper -n 50 taberna.nl",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "gh-pages -t -d build -b gh-pages"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -16,18 +16,14 @@
   "dependencies": {
     "autoprefixer": "^8.2.0",
     "flickity": "^2.0.5",
-    "github-pages": "^3.0.2",
     "hamburgers": "^0.8.1",
     "imagesloaded": "^4.1.1",
     "jquery": "^3.1.1",
     "ordnung-js": "^1.0.2",
     "postcss-modules": "^1.1.0",
-    "reset-css": "^2.2.0",
-    "zenscroll": "^4.0.0"
+    "reset-css": "^2.2.0"
   },
   "devDependencies": {
-    "github-pages": "^3.0.2",
-    "hiper": "0.0.14",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.10.3",
     "posthtml-include": "^1.1.0",
