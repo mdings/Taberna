@@ -32,15 +32,17 @@ $hamburger-layer-color: #fff;
     display: block;
     text-align: center;
     background-color: $errorColor;
+    background-color: #8CADA7;
     padding: 8px 0;
-    color: #fff;
-    text-decoration: none;
+    
+    
 
     a {
         font-weight: bolder;
-        font-style: italic;
-        color: #fff;
+        color: #111;
+        display: block;
         // color: #F0CEA0;
+        text-decoration: none;
         font-size: 16px;
     }
 
