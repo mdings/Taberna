@@ -29,8 +29,8 @@ $hamburger-layer-color: #fff;
 }
 
 .announcement {
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     background-color: $errorColor;
     // background-color: #F2F4CB;
     padding: 8px 0;
