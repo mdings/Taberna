@@ -29,19 +29,16 @@ $hamburger-layer-color: #fff;
 }
 
 .announcement {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     background-color: $errorColor;
-    // background-color: #F2F4CB;
-    padding: 8px 0;
+    padding: 16px 0;
+    font-weight: bolder;
+    font-size: 16px;
 
     a {
-        font-weight: bolder;
+        
         color: #fff;
-        display: block;
         text-decoration: underline;
-        // color: #F0CEA0;
-        font-size: 16px;
     }
 
     span {
@@ -306,7 +303,6 @@ em {
 }
 
 .section__togo {
-    background-color: #D8E1FF!important;
     color: #000;
     padding: 40px 0 120px!important;
 
@@ -659,9 +655,17 @@ em {
             font-family: 'Amatic SC', serif;
         }
 
-        &__intro {
+        &__intro,
+        &__outro {
 
-            margin: 20px 0 40px;
+            margin: 30px 0 40px;
+        }
+
+        &__outro {
+            font-weight: bold;
+            display: inline-block;
+            background-color: #DDCFD5;
+            padding: 40px;
         }
 
         &__content {
