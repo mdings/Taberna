@@ -6,8 +6,9 @@
   "scripts": {
     "now-build": "parcel build index.html",
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --out-dir docs --public-url ./",
     "perf": "hiper -n 50 taberna.nl",
+    "deploy": "npm run build && git add . && git commit -a -m 'latest build' && git push origin master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
