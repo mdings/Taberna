@@ -26,6 +26,7 @@
     "zenscroll": "^4.0.2"
   },
   "devDependencies": {
+    "is-obj": "^2.0.0",
     "node-sass": "^4.14.1",
     "parcel-bundler": "^1.12.4",
     "posthtml-include": "^1.2.0",
