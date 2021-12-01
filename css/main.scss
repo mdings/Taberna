@@ -60,6 +60,10 @@ $hamburger-layer-color: #fff;
     }
 }
 
+.announcement--light {
+    background-color: mix(#fff, $errorColor, 15%);
+}
+
 body {
 
     line-height: 1.6;
