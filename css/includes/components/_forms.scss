@@ -1,4 +1,4 @@
-.c-forms-form {
+.cog-form__container {
     color: $mainColor;
     outline: 0;
     max-width: 500px;
@@ -8,7 +8,8 @@
         @extend %headline;
     }
 
-    input[type="text"] {
+    input[type="text"], 
+    .cog-picker > input {
         border-radius: 2px;
         height: 40px;
         padding: 8px;
@@ -21,7 +22,7 @@
         padding: 8px;
     }
 
-    .c-validation {
+    .cog-error-message {
         border-radius: 2px;
         margin-top: 6px;
         background-color: $errorColor!important;
@@ -42,6 +43,6 @@
     }
 }
 
-.cognito-datepicker {
+.cog-picker {
     color: $mainColor;
 }
