@@ -1,0 +1,48 @@
+.cog-form__container {
+  color: $mainColor;
+  outline: 0;
+  max-width: 500px;
+  margin: 40px auto 0;
+
+  h2 {
+      @extend %headline;
+  }
+
+  input[type="text"], 
+  .cog-picker > input {
+      border-radius: 2px;
+      height: 40px;
+      padding: 8px;
+      border: 1px solid $mainColor-40;
+  }
+
+  textarea {
+      border-radius: 2px;
+      border: 1px solid $mainColor-40;
+      padding: 8px;
+  }
+
+  .cog-error-message {
+      border-radius: 2px;
+      margin-top: 6px;
+      background-color: $errorColor!important;
+      padding: 7px;
+  }
+
+  .c-button {
+      font-family: 'Merriweather', serif;
+      border: none;
+      border-radius: 2px;
+      font-size: 16px;
+      padding: 8px 20px;
+      background-color: $mainColor-80;
+  }
+
+  .c-forms-confirmation {
+      text-align: center;
+  }
+}
+
+.cog-picker {
+  color: $mainColor;
+}
