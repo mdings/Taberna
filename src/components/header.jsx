@@ -12,11 +12,12 @@ function CloseMenu() {
     elm.classList.remove('is-active')
 }
 
-function Goto(id) {
+function Goto(e, id) {
     const elm = document.querySelector(id)
     const offset = elm.offsetTop
     window.scrollTo({top: offset, left: 0, behavior: 'smooth' })
     CloseMenu()
+    e.preventDefault()
 }
 
 function Header() {
@@ -31,10 +32,10 @@ function Header() {
     <div className="container">
         <nav className="nav__main">
             <ul>
-                <li><a href="#about" onClick={() => Goto('#about')}>Over Taberna</a></li>
-                <li><a href="#pictures" onClick={() => Goto('#pictures')}>Sfeerimpressie</a></li>
-                <li><a href="#menu" onClick={() => Goto('#menu')}>Menukaart</a></li>
-                <li><a href="#reservation" onClick={() => Goto('#reservation')}>Reserveer</a></li>
+                <li><a href="#about" onClick={(e) => Goto(e, '#about')}>Over Taberna</a></li>
+                <li><a href="#pictures" onClick={(e) => Goto(e, '#pictures')}>Sfeerimpressie</a></li>
+                <li><a href="#menu" onClick={(e) => Goto(e, '#menu')}>Menukaart</a></li>
+                <li><a href="#reservation" onClick={(e) => Goto(e, '#reservation')}>Reserveer</a></li>
             </ul>
         </nav>
         <div className="logo">
