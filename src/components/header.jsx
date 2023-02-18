@@ -1,9 +1,28 @@
 import Hours from "./openinghours"
 
+function ToggleMenu(e) {
+    const elm = document.querySelector('[data-hamburger]')
+    document.body.classList.toggle('is-menu-active')
+    elm.classList.toggle('is-active')
+}
+
+function CloseMenu() {
+    const elm = document.querySelector('[data-hamburger]')
+    document.body.classList.remove('is-menu-active')
+    elm.classList.remove('is-active')
+}
+
+function Goto(id) {
+    const elm = document.querySelector(id)
+    const offset = elm.offsetTop
+    window.scrollTo({top: offset, left: 0, behavior: 'smooth' })
+    CloseMenu()
+}
+
 function Header() {
   return (
     <div className="section__header">
-    <button className="hamburger hamburger--spin" type="button" aria-label="menu" data-hamburger>
+    <button className="hamburger hamburger--spin" type="button" aria-label="menu" data-hamburger onClick={e => ToggleMenu(e)}>
         <span className="hamburger-box">
             <span className="hamburger-inner"></span>
         </span>
@@ -12,11 +31,10 @@ function Header() {
     <div className="container">
         <nav className="nav__main">
             <ul>
-                <li><a href="#about">Over Taberna</a></li>
-                <li><a href="#pictures">Sfeerimpressie</a></li>
-                <li><a href="#agenda">Agenda</a></li>
-                <li><a href="#menu">Menukaart</a></li>
-                <li><a href="#reservation">Reserveer</a></li>
+                <li><a href="#about" onClick={() => Goto('#about')}>Over Taberna</a></li>
+                <li><a href="#pictures" onClick={() => Goto('#pictures')}>Sfeerimpressie</a></li>
+                <li><a href="#menu" onClick={() => Goto('#menu')}>Menukaart</a></li>
+                <li><a href="#reservation" onClick={() => Goto('#reservation')}>Reserveer</a></li>
             </ul>
         </nav>
         <div className="logo">

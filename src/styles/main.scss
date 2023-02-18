@@ -1,17 +1,15 @@
-// @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400|Playfair+Display:400,400i|Amatic+SC');
-
 $hamburger-layer-color: #fff;
 
 @import "reset-css/sass/reset.scss";
-/* @import "../node_modules/hamburgers/_sass/hamburgers/hamburgers"; */
+@import "hamburgers/_sass/hamburgers/hamburgers";
 @import "includes/include-media";
 @import "includes/vars";
 @import "includes/buttons";
 @import "includes/headlines";
 @import "includes/top";
 @import "includes/forms";
-/* @import "includes/vendor/flickity"; */
-/* @import "includes/vendor/flickity-overwrites"; */
+@import "includes/vendor/flickity";
+@import "includes/vendor/flickity-overwrites";
 
 *,
 *:before,

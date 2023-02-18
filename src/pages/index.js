@@ -9,6 +9,7 @@ import About from '@/components/about'
 import Gallery from '@/components/gallery'
 import Menu from '@/components/menu'
 import Hours from '@/components/openinghours'
+import Top from '@/components/top'
 
 const mw = Merriweather({ 
   weight: ['300', '400'], 
@@ -38,8 +39,11 @@ export default function Home() {
         <Intro font={ac} />
         <Specials font={ac} />
         <About font={ac} />
+        <Top />
         <Gallery />
+        <Top />
         <Menu font={ac} />
+        <Top />
         <section className="section__form" id="reservation">
           <div className="container container">
               <h2 className={ac.className}>Reserveringen</h2>

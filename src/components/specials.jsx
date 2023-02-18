@@ -4,25 +4,19 @@ function Specials({font}) {
       <div className="container">
           <h2 className={font.className}>Specials</h2>
           <h3>Taberna lunchdeal</h3>
-          <p>
-              Voor 2,5 extra krijg je een kleine soep naar keuze bij je Panino naar keuze
-          </p>
+          <p> Voor 2,5 extra krijg je een kleine soep naar keuze bij je Panino naar keuze</p>
+
           <h3>Donderdagavond</h3>
-          <p>
-              Alle pasta's voor maar 14,-
-          </p>
+          <p>Alle pasta's voor maar 14,-</p>
+
           <h3>Donderdagavond</h3>
-          <p>
-              1/2/3 gangen menu à 12,5/15/17,5 (wisselend menu)
-          </p>
+          <p>3 gangen keuze menu à 24,50 p.p. (meer dan 30 keuzes)</p>
+
           <h3>Vrijdagavond</h3>
-          <p>
-              Typisch Taberna. <br />Onbeperkt kleine gerechtjes kiezen voor 29,9 p.p.
-          </p>
+          <p>Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit 5 of 6 gangen, meer dan 30 keuzes)</p>
+
           <h3>Koopzondag</h3>
-          <p>
-              Gastrobar Taberna<br />Onbeperkt 'borrelen' 17,5 p.p.<br /> Keuze uit 18 soorten antipasti/tapas (vanaf 14.00 uur)
-          </p>
+          <p>Gastrobar Taberna<br />Onbeperkt 'borrelen' 17,5 p.p.<br /> Keuze uit 18 soorten antipasti/tapas (vanaf 14.00 uur)</p>
       </div>
   </section>
   )
