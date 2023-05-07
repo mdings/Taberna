@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import '@/styles/main.scss'
+import '@/styles/popup.scss'
 import { useEffect } from 'react'
 
 let flkty

@@ -369,6 +369,10 @@ em {
         padding-top: 30px;
     }
 
+    p {
+        max-width: 480px;
+        margin: 0 auto;
+    }
     .container {
         &:before {
             display: block;

@@ -31,7 +31,7 @@ export default function Home() {
         <meta name="author" content="Taberna Weert" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className={mw.className}>
+      <div className={mw.className} style={{'background-color': '#ffffff'}}>
           {/* <div className="announcement">
             <a href="/assets/Sinterkerst 2022.pdf"> Met de feestdagen is er weer "Kerst To-Go"!</a>
           </div> */}
