@@ -18,10 +18,6 @@ function Specials({font}) {
 
           <h3>Vrijdagavond</h3>
           <p>Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit 5 of 6 gangen, meer dan 30 keuzes)</p>
-
-          <h3>Koopzondag</h3>
-          <p>Gastrobar Taberna<br />Onbeperkt 'borrelen' 17,5 p.p.<br /> Keuze uit 18 soorten antipasti/tapas (vanaf 14.00 uur)</p>
-
          
       </div>
   </section>
