@@ -32,7 +32,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={mw.className} style={{'background-color': '#ffffff'}}>
-          {/* <div className="announcement"></div> */}
+          <div className="announcement">
+          <a href="/Sinterkerst_2023.pdf">Voor de feestdagen hebben wij weer ons speciaal Sinterkerst menu. Ook to-go!</a>
+          </div>
         <Header />
         <Intro font={ac} />
         <Specials font={ac} />
