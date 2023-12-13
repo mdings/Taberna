@@ -55,7 +55,7 @@ function Menu({font}) {
                         <span className="item">Formaggio</span>
                         <span className="item__dots"></span>
                         <span className="item__price">10,5</span>
-                        <span className="item__description">Plankje met diverse Mediterraanse kaasjes, Kroketjes met een vulling van kabeljauw, vijgenbalsamico en Manchego kaaskoekjes</span>
+                        <span className="item__description">Plankje met diverse Mediterraanse kaasjes, vijgenbalsamico en vijgenbrood</span>
                     </li>
                     <li>
                         <span className="item">Croquetas Bacalao</span>
@@ -177,10 +177,10 @@ function Menu({font}) {
                         <span className="item__description">Gemaakt van pomodori tomaten, met spekjes en basilicum-mascarpone</span>
                     </li>
                     <li>
-                        <span className="item">Sopa de Batata</span>
+                        <span className="item">Sopa de Batata e Ajo</span>
                         <span className="item__dots"></span>
                         <span className="item__price">4,4 (klein) /  6,5</span>
-                        <span className="item__description">Zachte soep van zoete aardappel, gemarineerde garnaaltjes en basilicum-mascarpone</span>
+                        <span className="item__description">Aardappelsoep met knoflook, Parmezaanse kaas, stukjes kippendij en basilicum-mascarpone</span>
                     </li>
                     <li>
                         <span className="item">Zuppa & Sopa</span>
@@ -199,9 +199,9 @@ function Menu({font}) {
             <section className="menu__intro">
                 <div className="container container--small">
                     <p>
-                            De salades worden gemaakt met een gemengde salade, kruidenvinaigrette en huisgemaakte croutons.
-                            De salades kunnen genuttigd worden als voorgerecht of volledige maaltijd.
-                            <span className="bold">Extra lekker met een mandje brood! 4,-</span>
+                    De salades worden gemaakt met een mesclun salade, kruidenvinaigrette en huisgemaakte croutons.
+De salades kunnen genuttigd worden als voorgerecht of volledige maaltijd.
+                            <span className="bold">Extra lekker met een mandje brood! 4,5</span>
                     </p>
                 </div>
             </section>
@@ -234,10 +234,11 @@ function Menu({font}) {
                    
                   
                     <li>
-                        <span className="item">Mediterrane</span>
+                        <span className="item">Vitello Tonnato</span>
                         <span className="item__dots"></span>
                         <span className="item__price">11,5 / 14,9 (groot)</span>
-                        <span className="item__description">Met dungesneden Serranoham, vijgenbalsamico, Parmezaan, pistacchio nootjes en zongedroogde tomaatjes</span>
+                        <span className="item__description">Met dungesneden kalfsmuis, een romige tonijn crème, kappertjes
+en zongedroogde tomaatjes</span>
                     </li>
                 </ul>
             </section>
@@ -250,8 +251,7 @@ function Menu({font}) {
             <section className="menu__intro">
                 <div className="container container--small">
                     <p>
-                        Panino is Italiaans voor ‘broodje’. Onze panino wordt gemaakt van rustiek brood, koud belegd. Bij Taberna krijg je dus <em><u>géén platgedrukt stokbroodje met grillstrepen</u></em>. Keuze uit Schiacchata wit of meergranen brood.
-                        Schiacchata is een Italiaans ‘plat’ brood
+                        Panino is Italiaans voor ‘broodje’. Onze panino wordt gemaakt van rustiek brood, koud belegd. Bij Taberna krijg je dus <em><u>géén platgedrukt stokbroodje met grillstrepen</u></em>. Keuze uit Foccacia wit of meergranen foccacia.
                     </p>
                 </div>
             </section>
@@ -339,8 +339,7 @@ function Menu({font}) {
                 <div className="container container--small">
                     <p>
                         Plancha is plank in het Spaans. Hier serveren wij onze variant van het ’12-uurtje’ op.
-                        Keuze uit Schiacchata wit of meergranen brood.
-                        Schiacchata is een Italiaans ‘plat’ brood
+                        Keuze uit Foccacia wit of meergranen foccacia.
                     </p>
                 </div>
             </section>
@@ -349,21 +348,21 @@ function Menu({font}) {
                     <li>
                         <span className="item">Plancha Prosciutto</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,8</span>
                         <span className="item__description">Kleine soep naar keuze ~ half broodje met kruidenaioli en
                             ibericoham kroketjes ~ halve panino Carpaccio</span>
                     </li>
                     <li>
                         <span className="item">Plancha Pescado</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,8</span>
                         <span className="item__description">Kleine soep naar keuze ~ half broodje met limoen-aioli en
                             kabeljauw kroketjes ~ halve panino Tonno</span>
                     </li>
                     <li>
                         <span className="item">Plancha Verdura</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,8</span>
                         <span className="item__description">Kleine soep naar keuze ~ half broodje met tomaten tapenade en
                             gefrituurde geitenkaas ~ halve panino truffelmayo en gegrilde groenten</span>
                     </li>
@@ -378,8 +377,11 @@ function Menu({font}) {
             <section className="menu__intro">
                 <div className="container container--small">
                     <p>
-                        Onze pizza’s 2.0 worden nét anders gemaakt dan anders. Wij gebruiken hiervoor Bruschetta Ovale. Deze
-                        worden net als de traditionele pizza’s belegd met tomatensaus, mozzarella en de lekkerste ingrediënten.
+                    Onze pizza’s 2.0 worden nét anders gemaakt dan anders. Wij gebruiken hiervoor Pinsa Romana.
+Pinsa Romana is een variant van pizza die je maakt met een mix aan bloemsoorten, veel water en een
+lange rijstijd. Het deeg wordt daardoor super luchtig en heel licht verteerbaar.
+Deze worden net als de traditionele pizza’s belegd met tomatensaus, mozzarella en de lekkerste
+ingrediënten.
                     </p>
                 </div>
             </section>
@@ -433,9 +435,9 @@ rucola</span>
             <section className="menu__intro">
                 <div className="container container--small">
                     <p>
-                            Onze verse burgers met de lekkerste kruiden worden geserveerd op een burgerbroodje. De broodjes worden belegd
-                            met sla, tomaat, komkommer, rode ui en verder uiteraard de lekkerste Spaanse of Italiaanse ingrediënten.
-                            We serveren hier een licht pikante aardappelsalade bij.
+                    Onze verse burgers met de lekkerste kruiden worden geserveerd op een burgerbroodje. De broodjes worden
+belegd met sla, tomaat, komkommer en verder uiteraard de lekkerste Spaanse of Italiaanse ingrediënten.
+We serveren hier een licht pikante aardappelsalade bij.
                     </p>
                 </div>
             </section>
@@ -489,7 +491,7 @@ rucola</span>
 
 Bij ons een grotere variant van verse Bigoli (dikkere spaghetti).
 De pasta’s worden geserveerd met Parmezaanse kaas en rucola<br/><br/>
-OP DONDERDAGAVOND ZIJN ALLE PASTA’S TE BESTELLEN VOOR MAAR 14,-
+<b>OP DONDERDAGAVOND ZIJN ALLE PASTA’S TE BESTELLEN VOOR MAAR 14,5</b>
 
                     </p>
                 </div>
@@ -561,7 +563,7 @@ OP DONDERDAGAVOND ZIJN ALLE PASTA’S TE BESTELLEN VOOR MAAR 14,-
                         <span className="item">Affogato (Italiaans voor ‘verdronken’)</span>
                         <span className="item__dots"></span>
                         <span className="item__price">7,-</span>
-                        <span className="item__description">Vanille-ijs verdronken in warme espresso met slagroom en cantuccini</span>
+                        <span className="item__description">Vanille-ijs 'verdronken' in warme espresso met slagroom en cantuccini</span>
                     </li>
                     <li>
                         <span className="item">Tiramisu</span>
