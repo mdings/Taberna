@@ -11,9 +11,6 @@ function Specials({font}) {
           <p> Voor 3,5 extra krijg je een kleine soep naar keuze bij je Panino naar keuze</p>
 
           <h3>Donderdagavond</h3>
-          <p>Alle pasta's voor maar 14,-</p>
-
-          <h3>Donderdagavond</h3>
           <p>3 gangen keuze menu à 25,90 p.p. (meer dan 30 keuzes)</p>
 
           <h3>Vrijdagavond</h3>

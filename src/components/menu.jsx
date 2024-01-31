@@ -30,13 +30,13 @@ function Menu({font}) {
                     <li>
                         <span className="item">Plancha Pane</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">7,5</span>
+                        <span className="item__price">7,9</span>
                         <span className="item__description">Plankje met brood, grissini, dips en olijfjes</span>
                     </li>
                     <li>
                         <span className="item">Pane</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">4,8</span>
+                        <span className="item__price">5,-</span>
                         <span className="item__description">Broodmandje met twee dips</span>
                     </li>
                     <li>
@@ -90,7 +90,7 @@ function Menu({font}) {
                     <li>
                         <span className="item">Calamaris</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">7,5</span>
+                        <span className="item__price">7,9</span>
                         <span className="item__description">Gefrituurde inktvisringen met limoen-aioli</span>
                     </li>
                     <li>
@@ -105,15 +105,8 @@ function Menu({font}) {
                     <li>
                         <span className="item">Cebolla</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">7,5</span>
+                        <span className="item__price">7,9</span>
                         <span className="item__description">Gefrituurde uienringen met kruidenaioli</span>
-                    </li>
-                    
-                    <li>
-                        <span className="item">Chorizo Assado</span>
-                        <span className="item__dots"></span>
-                        <span className="item__price">10,5</span>
-                        <span className="item__description">Op tafel geflambeerde chorizo!</span>
                     </li>
                     <li>
                         <span className="item">Pollo frito</span>
@@ -122,9 +115,15 @@ function Menu({font}) {
                         <span className="item__description">Gefrituurde kipstukjes met chili-aioli</span>
                     </li>
                     <li>
+                        <span className="item">Patatas Taberna</span>
+                        <span className="item__dots"></span>
+                        <span className="item__price">7,9</span>
+                        <span className="item__description">Krokante aardappeltjes met kruidenaioli en pikante saus</span>
+                    </li>
+                    <li>
                         <span className="item">Fuet</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">5,5-</span>
+                        <span className="item__price">5,9</span>
                         <span className="item__description">Catalaanse fuet worst</span>
                     </li>
                     <li>
@@ -173,19 +172,19 @@ function Menu({font}) {
                     <li>
                         <span className="item">Zuppa di Pomodoro</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">4,4 (klein) /  6,5</span>
+                        <span className="item__price">5,- (klein) /  6,8</span>
                         <span className="item__description">Gemaakt van pomodori tomaten, met spekjes en basilicum-mascarpone</span>
                     </li>
                     <li>
                         <span className="item">Sopa de Batata e Ajo</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">4,4 (klein) /  6,5</span>
+                        <span className="item__price">5,- (klein) /  6,8</span>
                         <span className="item__description">Aardappelsoep met knoflook, Parmezaanse kaas, stukjes kippendij en basilicum-mascarpone</span>
                     </li>
                     <li>
                         <span className="item">Zuppa & Sopa</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">8,-</span>
+                        <span className="item__price">9,-</span>
                         <span className="item__description">Duo van soepjes met brood en 1 dip</span>
                     </li>
                 </ul>
@@ -210,35 +209,26 @@ De salades kunnen genuttigd worden als voorgerecht of volledige maaltijd.
                     <li>
                         <span className="item">Carpaccio</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">11,5 / 14,9 (groot)</span>
+                        <span className="item__price">12,5 / 15,5 (groot)</span>
                         <span className="item__description">Carpaccio van het rund met zongedroogde tomaatjes, truffelcrème, geroosterde amandelschaafsel en Parmezaanse kaas</span>
                     </li>
                     <li>
                         <span className="item">Queso frito</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">11,5 / 14,9 (groot)</span>
+                        <span className="item__price">12,5 / 15,5 (groot)</span>
                         <span className="item__description">Met gefrituurde geitenkaas, truffel balsamico, gebrande amandelen, crème van rode biet, balsamico-uitjes en gepofte cherrytomaatjes</span>
                     </li>
                     <li>
                         <span className="item">Cesare</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">11,5 / 14,9 (groot)</span>
+                        <span className="item__price">12,5 / 15,5 (groot)</span>
                         <span className="item__description">Met gekruide kippendijfilet, Parmezaanse kaas, gekookt ei en een romige knoflookdressing</span>
                     </li>
                     <li>
-                        <span className="item">Pescado</span>
+                        <span className="item">Gamba & Tonno</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">11,5 / 14,9 (groot)</span>
-                        <span className="item__description">Met tonijnsalade, gemarineerde garnaaltjes, crème van rode bietjes, gepofte cherrytomaatjes en een limoen-aioli</span>
-                    </li>
-                   
-                  
-                    <li>
-                        <span className="item">Vitello Tonnato</span>
-                        <span className="item__dots"></span>
-                        <span className="item__price">11,5 / 14,9 (groot)</span>
-                        <span className="item__description">Met dungesneden kalfsmuis, een romige tonijn crème, kappertjes
-en zongedroogde tomaatjes</span>
+                        <span className="item__price">12,5 / 15,5 (groot)</span>
+                        <span className="item__description">Met gebakken scampi, romige tonijnsalade, gegrilde courgette en limoen-aioli</span>
                     </li>
                 </ul>
             </section>
@@ -260,7 +250,7 @@ en zongedroogde tomaatjes</span>
                     <li>
                         <span className="item">Tonno</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">10,4</span>
+                        <span className="item__price">10,9</span>
                         <span className="item__description">Met tapenade van zongedroogde tomaat, belegd met gemengde sla en huisgemaakte tonijnsalade</span>
                     </li>
                     {/* <li>
@@ -272,13 +262,13 @@ en zongedroogde tomaatjes</span>
                     <li>
                         <span className="item">Queso</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">11,5-</span>
+                        <span className="item__price">11,9</span>
                         <span className="item__description">Met crème van rode biet, gefrituurde geitenkaas, gegrilde courgette, mesclun sla en gedroogde tomaatjes</span>
                     </li>
                     <li>
                         <span className="item">Carpaccio</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">11,5-</span>
+                        <span className="item__price">11,9</span>
                         <span className="item__description">Met truffelcrème, carpaccio, gedroogde tomaatjes, mesclun sla, Parmezaanse kaas en amandelschaafsel</span>
                     </li>
                     <li>
@@ -290,21 +280,15 @@ en zongedroogde tomaatjes</span>
                     <li>
                         <span className="item">Bruschetta con Funghi</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">11,5</span>
+                        <span className="item__price">11,9</span>
                         <span className="item__description">Toast met gebakken champignons, truffelcrème, mesclun sla en Parmezaanse kaas</span>
                     </li>        
                     <li>
-                        <span className="item">Spianata Romana</span>
+                        <span className="item">Serrano</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">10,4</span>
-                        <span className="item__description">Met kruidenaioli, Spianata Romana, Parmezaanse kaas en gegrilde paprika</span>
-                    </li>        
-                    <li>
-                        <span className="item">Vitello Tonnato</span>
-                        <span className="item__dots"></span>
-                        <span className="item__price">11,5</span>
-                        <span className="item__description">Met tonijn crème, dun gesneden kalfsmuis, zongedroogde tomaatjes en kappertjes</span>
-                    </li>        
+                        <span className="item__price">10,9</span>
+                        <span className="item__description">Met een frisse tomatentapenade en dungesneden Jamon Serrano</span>
+                    </li>           
                     <li>
                         <span className="item">Croquetas Jamon Iberico</span>
                         <span className="item__dots"></span>
@@ -348,21 +332,21 @@ en zongedroogde tomaatjes</span>
                     <li>
                         <span className="item">Plancha Prosciutto</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,8</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Kleine soep naar keuze ~ half broodje met kruidenaioli en
                             ibericoham kroketjes ~ halve panino Carpaccio</span>
                     </li>
                     <li>
                         <span className="item">Plancha Pescado</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,8</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Kleine soep naar keuze ~ half broodje met limoen-aioli en
                             kabeljauw kroketjes ~ halve panino Tonno</span>
                     </li>
                     <li>
                         <span className="item">Plancha Verdura</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,8</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Kleine soep naar keuze ~ half broodje met tomaten tapenade en
                             gefrituurde geitenkaas ~ halve panino truffelmayo en gegrilde groenten</span>
                     </li>
@@ -390,7 +374,7 @@ ingrediënten.
                     <li>
                         <span className="item">Pizza Margharita</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">12,5</span>
+                        <span className="item__price">12,9</span>
                         <span className="item__description"></span>
                     </li>
                     <li>
@@ -412,17 +396,16 @@ ingrediënten.
                         <span className="item__description">Belegd met gekruid gehakt, Parmezaanse kaas, chili-aioli en rucola</span>
                     </li>
                     <li>
-                        <span className="item">Pizza Toscane</span>
-                        <span className="item__dots"></span>
-                        <span className="item__price">14,9</span>
-                        <span className="item__description">Belegd met gemarineerde garnaaltjes, gegrilde courgette, limoen-aioli en
-rucola</span>
-                    </li>
-                    <li>
                         <span className="item">Pizza Napoli</span>
                         <span className="item__dots"></span>
                         <span className="item__price">14,9</span>
                         <span className="item__description">Belegd met kippendijfilet, chili-aioli, rucola en cherrytomaatjes</span>
+                    </li>
+                    <li>
+                        <span className="item">Pizza Torino</span>
+                        <span className="item__dots"></span>
+                        <span className="item__price">14,9</span>
+                        <span className="item__description">Belegd met tonijn, cherrytomaatjes, gegrilde paprika en olijven</span>
                     </li>
                 </ul>
             </section>
@@ -446,32 +429,32 @@ We serveren hier een licht pikante aardappelsalade bij.
                     <li>
                         <span className="item">Burger España</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Gekruide burger met kruidenaioli en dungesneden Chorizo &amp; Serranoham</span>
                     </li>
                     <li>
                         <span className="item">Burger Italia</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Gekruide burger met truffelcrème, plakjes Coppa di Parma en Parmezaanse kaas</span>
                     </li>
                     <li>
                         <span className="item">Burger Tortilla</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Vegetarische burger met een tapenade van gedroogde tomaatjes, gegrilde groenten,
                         tortillachips en met mozzarella</span>
                     </li>
                     <li>
                         <span className="item">Burger Cipolla</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Gekruide burger met chili-knoflooksaus en gefrituurde uienringen</span>
                     </li>
                     <li>
                         <span className="item">Burger Mediteraans</span>
                         <span className="item__dots"></span>
-                        <span className="item__price">14,5</span>
+                        <span className="item__price">14,9</span>
                         <span className="item__description">Gekruide burger met basilicum-pesto, rucola, Parmezaanse kaas en
                             gedroogde tomaatjes</span>
                     </li>
@@ -600,6 +583,32 @@ De pasta’s worden geserveerd met Parmezaanse kaas en rucola<br/><br/>
                         <span className="item__dots"></span>
                         <span className="item__price">6,5</span>
                         <span className="item__description">Mix van diverse Italiaanse koekjes, zoals cantuccini, amarettini, en Italiaanse Merengue</span>
+                    </li>
+                    <li>
+                        <span className="item">Taberna Coffee</span>
+                        <span className="item__dots"></span>
+                        <span className="item__price">7,-</span>
+                        <span className="item__description">Een kopje heerlijke Bacio koffie, met bonbon, amarettini, cantuccini
+én een glaasje ijskoude Limoncello</span>
+                    </li>
+                    <li>
+                        <span className="item">Spanish Coffee</span>
+                        <span className="item__dots"></span>
+                        <span className="item__price">7,5</span>
+                        <span className="item__description">Koffie met Cuarenta Y Tres en slagroom, met bonbon, amarettini en cantuccini</span>
+                    </li>
+                    <li>
+                        <span className="item">Italian Coffee</span>
+                        <span className="item__dots"></span>
+                        <span className="item__price">7,5</span>
+                        <span className="item__description">Koffie met Disaronno Originale en slagroom, met bonbon, amarettini en cantuccini</span>
+                    </li>
+                    <li>
+                        <span className="item">Brandy Coffee</span>
+                        <span className="item__dots"></span>
+                        <span className="item__price">7,5</span>
+                        <span className="item__description">Koffie met Vecchia Romagna, Italiaanse brandy van de Trebbiano druif en slagroom
+met bonbon, amarettini en cantuccini</span>
                     </li>
                 </ul>
             </section>
