@@ -324,7 +324,7 @@ en zongedroogde tomaatjes</span>
                     <p>
                         <b>Lunchdeal!</b>
                         <br />
-                        Voor 2,5 extra maak je je lunch compleet met
+                        Voor 3,5 extra maak je je lunch compleet met
                         een kleine soep naar keuze!
                     </p>
                 </div>
