@@ -32,7 +32,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={mw.className} style={{'background-color': '#ffffff'}}>
-        <div className="announcement">Gesloten van 14/02 t/m 17/02 ivm vakantie.</div>
         <Header />
         <Intro font={ac} />
         <Specials font={ac} />
