@@ -474,7 +474,6 @@ We serveren hier een licht pikante aardappelsalade bij.
 
 Bij ons een grotere variant van verse Bigoli (dikkere spaghetti).
 De pasta’s worden geserveerd met Parmezaanse kaas en rucola<br/><br/>
-<b>OP DONDERDAGAVOND ZIJN ALLE PASTA’S TE BESTELLEN VOOR MAAR 14,5</b>
 
                     </p>
                 </div>
@@ -485,7 +484,7 @@ De pasta’s worden geserveerd met Parmezaanse kaas en rucola<br/><br/>
                         <span className="item">Aglio e olio</span>
                         <span className="item__dots"></span>
                         <span className="item__price">14,-</span>
-                        <span className="item__description">Pasta met gebakken scampi, knoflook, Spaanse peper, olijfolie en peterselie</span>
+                        <span className="item__description">Pasta met knoflook, Spaanse peper, olijfolie en peterselie</span>
                     </li>
                     <li>
                         <span className="item">Aglio e olio + SCAMPI</span>
