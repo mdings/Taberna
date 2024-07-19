@@ -339,7 +339,7 @@ function Menu({ font }) {
                 <em>
                   <u>géén platgedrukt stokbroodje met grillstrepen</u>
                 </em>
-                . Keuze uit Foccacia wit of meergranen foccacia.
+                . Keuze uit Schiachatta wit of meergranen schiachatta.
               </p>
             </div>
           </section>

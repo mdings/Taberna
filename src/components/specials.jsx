@@ -55,7 +55,7 @@ function Specials({ font }) {
           Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit
           5 gangen voor 34,- of 6 gangen voor 36,50)
           <br />
-          <a href="/typisch-taberna.pdf" target="_blank">
+          <a href="/typisch-taberna-2.pdf" target="_blank">
             (Bekijk het keuzemenu)
             <img
               style={{ marginLeft: "4px", transform: "translateY(2px)" }}
