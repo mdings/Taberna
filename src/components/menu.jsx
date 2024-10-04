@@ -317,7 +317,7 @@ function Menu({ font }) {
                 </span>
               </li>
               <li>
-                <span className="item">Salade Serranp y Manchego</span>
+                <span className="item">Salade Serrano y Manchego</span>
                 <span className="item__dots"></span>
                 <span className="item__price">12,5 / 15,5 (groot)</span>
                 <span className="item__description">
