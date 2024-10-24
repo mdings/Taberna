@@ -32,10 +32,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={mw.className} style={{ backgroundColor: "#ffffff" }}>
-        <div className="announcement">
-          We zijn gesloten van 09 oktober tm 23 oktober i.v.m. vakantie. Vanaf
-          24 oktober weer normaal geopend.
-        </div>
         <Header />
         <Intro font={ac} />
         <Specials font={ac} />
