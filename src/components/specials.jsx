@@ -21,7 +21,7 @@ function Specials({ font }) {
             specials!
             <br />
             <br />
-            13.00 uur 0 17:00 uur
+            13.00 uur - 17:00 uur
             <br />
             &euro; 47,50 p.p. <br />
             <br />
