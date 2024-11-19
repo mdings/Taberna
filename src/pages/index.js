@@ -32,6 +32,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={mw.className} style={{ backgroundColor: "#ffffff" }}>
+        <div class="announcement">
+          Eerste Kerstdag zijn wij geopend, zie onze specials! Tevens kunt u{" "}
+          <a href="Kerst-Oudjaar_2024.pdf">bestellen voor Kerst en Oudjaar</a>
+        </div>
         <Header />
         <Intro font={ac} />
         <Specials font={ac} />
@@ -41,6 +45,7 @@ export default function Home() {
         <Top />
         <Menu font={ac} />
         <Top />
+        {/* 
         <section className="section__form" id="reservation">
           <div className="container container">
             <h2 className={ac.className}>Reserveringen</h2>
@@ -65,9 +70,15 @@ export default function Home() {
                   Cognito.load("forms", { id: "1" });
                 }}
               ></Script>
+
+             
             </div>
           </div>
-        </section>
+        </section> */}
+        <Script
+          type="text/javascript"
+          src="https://gotable.app/restaurants/130189/reservations/new.js?locale=nl&layout=floating&variant=themed/337&position=bottom-right"
+        ></Script>
       </div>
     </>
   );

@@ -70,6 +70,36 @@ body {
     }
 }
 
+.special__highlight {
+    margin-bottom: 100px;
+    background-color: #F5F3E0;
+    padding: 20px 0 5px;
+    border-radius: 20px;
+    &:before {
+        display: block;
+        content: '';
+        max-width: 250px;
+        background-size: 100%;
+        margin: 0 auto 10px;
+        background-image: url('/img/trees-transparent.png');
+        background-repeat: repeat-x;
+        background-position: center;
+        height: 22px;
+    }
+
+    &:after {
+        display: block;
+        content: '';
+        max-width: 250px;
+        background-size: 100%;
+        margin: 20px auto;
+        background-image: url('/img/trees-transparent.png');
+        background-repeat: repeat-x;
+        background-position: center;
+        height: 22px;
+    }
+}
+
 .container {
     padding: 0 $gutterWidth;
     width: 100%;
