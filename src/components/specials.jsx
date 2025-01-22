@@ -4,44 +4,6 @@ function Specials({ font }) {
       <div className="container">
         <h2 className={font.className}>Specials</h2>
 
-        <div class="special__highlight">
-          <h3>
-            1<sup>e</sup> Kerstdag
-          </h3>
-          <p>
-            Op 1<sup>e</sup> Kerstdag geniet je bij Taberna van de lekkerste
-            gerechtjes. <br /> Je begint met een amuse en kiest daarna per ronde
-            je lekkerste gerechtje of laat je verrassen, in totaal 6 gangen.
-            <br />
-            <br />
-            Antipasti, soep, salade, pizza, hoofdgerecht en een toetje.
-            <br />
-            <br />
-            Alles standaard typisch Taberna gerechtjes aangevuld met extra
-            specials!
-            <br />
-            <br />
-            13.00 uur - 17:00 uur
-            <br />
-            &euro; 47,50 p.p. <br />
-            <br />
-            Reserveren verplicht!
-            <br />
-            Voor kinderen is een special menu beschikbaar, vraag naar de opties!
-            <br />
-            <a href="/Typisch_Kerst_1.png" target="_blank">
-              (Bekijk het Kerstmenu)
-              <img
-                style={{ marginLeft: "4px", transform: "translateY(2px)" }}
-                src="/open-external-link-icon.svg"
-                width="12"
-                height="auto"
-                alt="Opens in new tab"
-              ></img>
-            </a>
-          </p>
-        </div>
-
         <h3>Munttheater diner</h3>
         <p>
           <a

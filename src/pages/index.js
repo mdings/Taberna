@@ -32,10 +32,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={mw.className} style={{ backgroundColor: "#ffffff" }}>
-        <div class="announcement">
-          Eerste Kerstdag zijn wij geopend, zie onze specials! Tevens kunt u{" "}
-          <a href="Kerst-Oudjaar_2024.pdf">bestellen voor Kerst en Oudjaar</a>
-        </div>
         <Header />
         <Intro font={ac} />
         <Specials font={ac} />
