@@ -48,7 +48,7 @@ export default function Home() {
               De naam gastrobar zegt het al.. wij zijn er voor onze gasten! Ons
               Taberna Team staat klaar om onze gasten te laten genieten van de
               lekkerste gerechten, planken en dranken. Wil jij deel uitmaken van
-              ons team? Laat van je horen en mail onsimage.png!
+              ons team? Laat van je horen en mail ons!
             </p>
             <Image
               src="/team.jpg"
