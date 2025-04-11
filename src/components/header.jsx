@@ -54,8 +54,8 @@ function Header() {
               </a>
             </li>
             <li>
-              <a href="#reservation" onClick={(e) => Goto(e, "#reservation")}>
-                Reserveer
+              <a href="#jobs" onClick={(e) => Goto(e, "#jobs")}>
+                Vacatures
               </a>
             </li>
           </ul>

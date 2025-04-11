@@ -390,6 +390,18 @@ em {
     }
 }
 
+.section__jobs {
+    padding-top: 75px;
+    text-align: center;
+    color: #000;
+    background-color: #E8E6BD30;
+    position: relative;
+    padding-bottom: 100px;
+
+   
+}
+
+
 .section__specials {
     text-align: center;
     padding-bottom: 50px;
@@ -706,4 +718,14 @@ em {
     padding: 10px 12px;
     font-size: 16px;
     display: inline-block;
+}
+
+footer {
+    padding: 40px 0;
+    background-color: #250301;
+    color: #fff;
+
+     a {
+        color: inherit;
+    }
 }

@@ -40,37 +40,43 @@ export default function Home() {
         <Gallery />
         <Top />
         <Menu font={ac} />
-        <Top />
-        {/* 
-        <section className="section__form" id="reservation">
-          <div className="container container">
-            <h2 className={ac.className}>Reserveringen</h2>
-            <p>
-              Met onderstaand formulier kunt u reserveringen maken bij Taberna.
-              <br />
-              <strong>
-                Uw reservering is pas definitief zodra uw gegevens telefonisch
-                of per e-mail zijn bevestigd!
-              </strong>
-              <br />
-              Reserveringen voor dezelfde dag kunnen enkel telefonisch worden
-              doorgegeven: 0495 586 339
-              <br />
-              <br />
-            </p>
-            <Hours />
-            <div className="cognito">
-              <Script
-                src="https://services.cognitoforms.com/s/xE4pLZy25kukkzzkiHsUHQ"
-                onLoad={() => {
-                  Cognito.load("forms", { id: "1" });
-                }}
-              ></Script>
 
-             
-            </div>
+        <section className="section__jobs" id="jobs">
+          <div className="container container--small">
+            <h1 className={ac.className}>Werken bij Taberna!</h1>
+            <p>
+              De naam gastrobar zegt het al.. wij zijn er voor onze gasten! Ons
+              Taberna Team staat klaar om onze gasten te laten genieten van de
+              lekkerste gerechten, planken en dranken. Wil jij deel uitmaken van
+              ons team? Laat van je horen en mail ons!
+            </p>
           </div>
-        </section> */}
+        </section>
+        <Top />
+
+        <footer>
+          <div className="container">
+            <section className="reachability">
+              <div className="reachability__hours">
+                <Hours />
+              </div>
+              <div className="reachability__contact">
+                Taberna Weert
+                <br />
+                Beekstraat 60a
+                <br />
+                <a href="tel://0495586339">Tel: 0495 586 339</a>
+                <br />
+                <a href="mailto:info@tabernaweert.nl">info@tabernaweert.nl</a>
+                <br />
+                <a href="https://www.facebook.com/tabernaweert/">
+                  Taberna Facebook
+                </a>
+              </div>
+            </section>
+          </div>
+        </footer>
+
         <Script
           type="text/javascript"
           src="https://gotable.app/restaurants/130189/reservations/new.js?locale=nl&layout=floating&variant=themed/337&position=bottom-right"
