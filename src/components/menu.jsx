@@ -334,7 +334,7 @@ function Menu({ font }) {
           <section className="menu__intro">
             <div className="container container--small">
               <p>
-                Panino is Italiaans voor ‘broodje’. Onze panino wordt gemaakt
+                Panino is Italiaans voor 'broodje'. Onze panino wordt gemaakt
                 van rustiek brood, koud belegd. Bij Taberna krijg je dus{" "}
                 <em>
                   <u>géén platgedrukt stokbroodje met grillstrepen</u>
@@ -441,7 +441,7 @@ function Menu({ font }) {
             <div className="container container--small">
               <p>
                 Plancha is plank in het Spaans. Hier serveren wij onze variant
-                van het ’12-uurtje’ op. Keuze uit schiachatta wit of meergranen
+                van het '12-uurtje' op. Keuze uit schiachatta wit of meergranen
                 schiachatta.
               </p>
             </div>
@@ -485,12 +485,12 @@ function Menu({ font }) {
           <section className="menu__intro">
             <div className="container container--small">
               <p>
-                Onze pizza’s 2.0 worden nét anders gemaakt dan anders. Wij
+                Onze pizza's 2.0 worden nét anders gemaakt dan anders. Wij
                 gebruiken hiervoor Pinsa Romana. Pinsa Romana is een variant van
                 pizza die je maakt met een mix aan bloemsoorten, veel water en
                 een lange rijstijd. Het deeg wordt daardoor super luchtig en
                 heel licht verteerbaar. Deze worden net als de traditionele
-                pizza’s belegd met tomatensaus, mozzarella en de lekkerste
+                pizza's belegd met tomatensaus, mozzarella en de lekkerste
                 ingrediënten.
               </p>
             </div>
@@ -635,7 +635,7 @@ function Menu({ font }) {
               <p>
                 Pasta (Italiaans voor deeg) eten ze in Italië als eerste gang,
                 de zogenaamde <em>'primo'</em>. Bij ons een grotere variant van
-                verse Bigoli (dikkere spaghetti). De pasta’s worden geserveerd
+                verse Bigoli (dikkere spaghetti). De pasta's worden geserveerd
                 met Parmezaanse kaas en rucola
                 <br />
                 <br />
@@ -655,7 +655,7 @@ function Menu({ font }) {
               <li>
                 <span className="item">Aglio e olio + SCAMPI</span>
                 <span className="item__dots"></span>
-                <span className="item__price">17,-</span>
+                <span className="item__price">17,5</span>
                 <span className="item__description">
                   Pasta aglio e olio met gebakken (gepelde) scampi
                 </span>
@@ -663,7 +663,7 @@ function Menu({ font }) {
               <li>
                 <span className="item">Aglio e olio + KIPPENDIJ</span>
                 <span className="item__dots"></span>
-                <span className="item__price">16,-</span>
+                <span className="item__price">16,5</span>
                 <span className="item__description">
                   Pasta aglio e olio met gebakken gekruide kippendijfilet
                 </span>
@@ -671,7 +671,7 @@ function Menu({ font }) {
               <li>
                 <span className="item">Carbonara 2.0</span>
                 <span className="item__dots"></span>
-                <span className="item__price">16,-</span>
+                <span className="item__price">16,5</span>
                 <span className="item__description">
                   Pasta met Pancetta, Mortadella, roomsaus, knoflook en
                   Parmezaanse kaas
@@ -680,7 +680,7 @@ function Menu({ font }) {
               <li>
                 <span className="item">Pasta Bolognese</span>
                 <span className="item__dots"></span>
-                <span className="item__price">16,-</span>
+                <span className="item__price">16,5</span>
                 <span className="item__description">
                   Pasta met gekruid gehakt en tomatensaus
                 </span>
@@ -688,7 +688,7 @@ function Menu({ font }) {
               <li>
                 <span className="item">Tartufo e funghi</span>
                 <span className="item__dots"></span>
-                <span className="item__price">17,-</span>
+                <span className="item__price">17,5</span>
                 <span className="item__description">
                   Pasta met gebakken champignons en paddenstoelen in een romige
                   saus van truffel
@@ -722,7 +722,7 @@ function Menu({ font }) {
               </li>
               <li>
                 <span className="item">
-                  Affogato (Italiaans voor ‘verdronken’)
+                  Affogato (Italiaans voor 'verdronken')
                 </span>
                 <span className="item__dots"></span>
                 <span className="item__price">7,-</span>
@@ -747,7 +747,7 @@ function Menu({ font }) {
                 <span className="item__dots"></span>
                 <span className="item__price">7,-</span>
                 <span className="item__description">
-                  Spaanse ‘donuts’ met karamelsaus en een bolletje vanille-ijs
+                  Spaanse 'donuts' met karamelsaus en een bolletje vanille-ijs
                 </span>
               </li>
               <li>
@@ -770,9 +770,9 @@ function Menu({ font }) {
               <li>
                 <span className="item">Grande Dolce</span>
                 <span className="item__dots"></span>
-                <span className="item__price">10,5</span>
+                <span className="item__price">11,-</span>
                 <span className="item__description">
-                  Dessert met diverse Taberna’s lekkernijen
+                  Dessert met diverse Taberna's lekkernijen
                 </span>
               </li>
               <li>

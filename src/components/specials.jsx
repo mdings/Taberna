@@ -32,13 +32,13 @@ function Specials({ font }) {
         <h3>Taberna lunchdeal</h3>
         <p>
           {" "}
-          Voor 3,5 extra krijg je een kleine soep naar keuze bij je Panino naar
+          Voor 3,8 extra krijg je een kleine soep naar keuze bij je Panino naar
           keuze
         </p>
 
         <h3>Donderdagavond</h3>
         <p>
-          3 gangen keuze menu à 27,50 p.p. <br />
+          3 gangen keuze menu à 28,- p.p. <br />
           <a href="/3-gangen-keuzemenu.pdf" target="_blank">
             (Bekijk het keuzemenu)
             <img
@@ -54,9 +54,9 @@ function Specials({ font }) {
         <h3>Vrijdagavond</h3>
         <p>
           Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit
-          5 gangen voor 34,- of 6 gangen voor 36,50)
+          5 gangen voor 34,50 of 6 gangen voor 37,-)
           <br />
-          <a href="/typisch-taberna-3.pdf" target="_blank">
+          <a href="/typisch-taberna.pdf" target="_blank">
             (Bekijk het keuzemenu)
             <img
               style={{ marginLeft: "4px", transform: "translateY(2px)" }}
