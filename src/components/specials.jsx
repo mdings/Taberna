@@ -7,14 +7,15 @@ function Specials({ font }) {
         <h3>Munttheater diner</h3>
         <p>
           <a
-            href="javascript:void(0);"
-            onClick={(e) =>
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
               window.open(
                 "/munttheater-diner",
                 "Munttheater Diner",
                 "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=750"
-              )
-            }
+              );
+            }}
           >
             Maak een avondje uit in het Munttheater compleet met het
             "Munttheater-diner"!
@@ -55,7 +56,7 @@ function Specials({ font }) {
           Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit
           5 gangen voor 34,- of 6 gangen voor 36,50)
           <br />
-          <a href="/typisch-taberna-2.pdf" target="_blank">
+          <a href="/typisch-taberna-3.pdf" target="_blank">
             (Bekijk het keuzemenu)
             <img
               style={{ marginLeft: "4px", transform: "translateY(2px)" }}
