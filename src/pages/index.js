@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <title>Welkom bij Taberna</title>
         <meta name="description" content="Welkom bij Taberna" />
         <meta name="author" content="Taberna Weert" />
@@ -50,6 +50,14 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
       <div className={mw.className} style={{ backgroundColor: "#ffffff" }}>
+        <div className="announcement">
+          Na het succes van vorig jaar (1e keer open op 1e Kerstdag) breiden we
+          het dit jaar uit; ook 2e Kerstdag zijn we open!
+          <br />
+          <a href="/kerst2025.pdf" target="_blank">
+            Bekijk het kerstmenu
+          </a>
+        </div>
         <Header />
         <Intro font={ac} />
         <Specials font={ac} />
