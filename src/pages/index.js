@@ -54,7 +54,7 @@ export default function Home() {
           Na het succes van vorig jaar (1e keer open op 1e Kerstdag) breiden we
           het dit jaar uit; ook 2e Kerstdag zijn we open!
           <br />
-          <a href="/kerst2025.pdf" target="_blank">
+          <a href="/Kerst2025.pdf" target="_blank">
             Bekijk het kerstmenu
           </a>
         </div>
