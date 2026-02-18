@@ -38,7 +38,7 @@ function Specials({ font }) {
 
         <h3>Donderdagavond</h3>
         <p>
-          3 gangen keuze menu à 28,- p.p. <br />
+          3 gangen keuzemenu vanaf 28,- p.p. <br />
           <a href="/3-gangen-keuzemenu.pdf" target="_blank">
             (Bekijk het keuzemenu)
             <img
@@ -54,10 +54,10 @@ function Specials({ font }) {
         <h3>Vrijdagavond</h3>
         <p>
           Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit
-          5 gangen voor 34,50 of 6 gangen voor 37,-)
+          5 gangen voor 35,- of 6 gangen voor 37,50)
           <br />
-          <a href="/typisch-taberna.pdf" target="_blank">
-            (Bekijk het keuzemenu)
+          <a href="/typisch-taberna" target="_blank">
+            (Bekijk het menu)
             <img
               style={{ marginLeft: "4px", transform: "translateY(2px)" }}
               src="/open-external-link-icon.svg"
