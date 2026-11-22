@@ -18,6 +18,8 @@ Open [localhost:3000](http://localhost:3000).
 
 The homepage uses the [Menukaart entry](https://app.contentful.com/spaces/y7xio8b6lt17/environments/master/entries/70rtKHhJPaHtxERhg4gk5w). Reorder sections on that entry and dishes under **Items in volgorde** on each section. Prices are display text, so both `8,-` and `5,- / 7,-` are valid. Publish changed dishes and any sections or menu entries whose links changed. The specials pages and their PDFs are separate from the homepage menu.
 
+The website reads the Contentful environment's default locale (`nl-NL`) and uses the locale returned by Contentful for Live Preview.
+
 1. Copy `.env.example` to `.env.local`. Create or select an API key in [Contentful → Settings → API keys](https://app.contentful.com/spaces/y7xio8b6lt17/api/keys) with access to `master`. Set `CONTENTFUL_ACCESS_TOKEN` to its Content Delivery API token and `CONTENTFUL_PREVIEW_ACCESS_TOKEN` to its Content Preview API token.
 2. Generate a separate URL-safe `CONTENTFUL_PREVIEW_SECRET` with `openssl rand -hex 32`. Keep the tokens and secret server-side. Add the same environment variables to your deployment before building. If the delivery token is absent, the site renders the original local menu for development and rollout; it won't receive published edits. With the delivery token set, the homepage revalidates published content on traffic after a 60-second interval.
 3. After deploying over HTTPS, open **Settings → Preview → Create preview platform** in Contentful. Name it **Taberna Live Preview**, enable **Menukaart**, **Menukaart – Sectie**, and **Menukaart – Item**, and set each preview URL to:

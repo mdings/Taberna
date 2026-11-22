@@ -12,7 +12,7 @@ import Gallery from "@/components/gallery";
 import Menu from "@/components/menu";
 import Hours from "@/components/openinghours";
 import Top from "@/components/top";
-import { getRestaurantMenu, menuLocale } from "@/lib/contentful";
+import { getRestaurantMenu } from "@/lib/contentful";
 
 const MenuPreview = dynamic(() => import("@/components/menu-preview"));
 const LegacyMenu = dynamic(() => import("@/components/legacy-menu"));
@@ -30,12 +30,12 @@ const ac = Amatic_SC({
 export async function getStaticProps({ draftMode = false }) {
   const menu = await getRestaurantMenu({ draftMode });
   return {
-    props: { menu, draftMode, locale: menuLocale },
+    props: { menu, draftMode },
     ...(menu && !draftMode ? { revalidate: 60 } : {}),
   };
 }
 
-export default function Home({ menu, draftMode, locale }) {
+export default function Home({ menu, draftMode }) {
   return (
     <>
       <Head>
@@ -73,7 +73,7 @@ export default function Home({ menu, draftMode, locale }) {
         <Gallery />
         <Top />
         {draftMode ? (
-          <MenuPreview menu={menu} font={ac} locale={locale} />
+          <MenuPreview menu={menu} font={ac} />
         ) : menu ? (
           <Menu menu={menu} font={ac} />
         ) : (

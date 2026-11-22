@@ -1,6 +1,5 @@
 import { createClient } from "contentful";
 
-export const menuLocale = process.env.CONTENTFUL_LOCALE || "en-US";
 export const menuEntryId = process.env.CONTENTFUL_MENU_ENTRY_ID || "70rtKHhJPaHtxERhg4gk5w";
 
 export async function getRestaurantMenu({ draftMode = false } = {}) {
@@ -25,7 +24,6 @@ export async function getRestaurantMenu({ draftMode = false } = {}) {
     const { items } = await client.getEntries({
       content_type: "restaurantMenu",
       "sys.id": menuEntryId,
-      locale: menuLocale,
       include: 2,
       limit: 1,
     });

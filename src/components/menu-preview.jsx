@@ -24,9 +24,9 @@ function EditableMenu({ menu, font }) {
   );
 }
 
-export default function MenuPreview({ menu, font, locale }) {
+export default function MenuPreview({ menu, font }) {
   return (
-    <ContentfulLivePreviewProvider locale={locale} targetOrigin="https://app.contentful.com">
+    <ContentfulLivePreviewProvider locale={menu.sys.locale} targetOrigin="https://app.contentful.com">
       <EditableMenu menu={menu} font={font} />
     </ContentfulLivePreviewProvider>
   );
