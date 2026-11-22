@@ -138,10 +138,38 @@ em {
     font-style: italic;
 }
 
+.section-background {
+    position: absolute;
+    inset: 0;
+    display: block;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.editorial-lines {
+    white-space: pre-line;
+}
+
+.editorial-text {
+    strong { font-weight: bolder; }
+    ul, ol { padding-inline-start: 1.5em; text-align: start; }
+    ul { list-style: disc; }
+    ol { list-style: decimal; }
+    a { text-decoration: underline; }
+}
+
+.section-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
 .section__header {
-    background-image: url('/header.jpg');
-    background-size: cover;
-    background-position: center;
     height: 750px;
     text-align: center;
     position: relative;
@@ -187,6 +215,7 @@ em {
         left: 0;
         background: rgba(#000, .7);
         z-index: 1;
+        pointer-events: none;
     }
 
     .container {
@@ -242,7 +271,7 @@ em {
     }
 
     li {
-        &:last-child {
+        &[data-navigation="jobs"] {
             border-radius: 2px;
             border: 2px solid rgba(#fff, .3);
         }
@@ -367,9 +396,9 @@ em {
     background-color: #fff;
     position: relative;
     padding-bottom: 100px;
-    background-image: url('/taberna-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    .container {
+        position: relative;
+    }
 
     &:before {
         position: absolute;
@@ -398,15 +427,19 @@ em {
     }
 }
 
+.section__copy,
 .section__jobs {
     padding-top: 75px;
     text-align: center;
     color: #000;
-    background-color: #E8E6BD30;
     position: relative;
     padding-bottom: 100px;
 
    
+}
+
+.section__jobs {
+    background-color: #E8E6BD30;
 }
 
 
@@ -437,6 +470,58 @@ em {
     
 }
 
+.homepage-columns {
+    margin-inline: auto;
+    max-width: $maxWidth;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    @media (min-width: $tablet) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.section__agenda {
+    padding-bottom: 50px;
+    color: #262626;
+
+    .container {
+        max-width: 800px;
+
+        &:before {
+            display: block;
+            content: "";
+            height: 22px;
+            background: url('/hr-12.png') repeat-x center;
+        }
+    }
+
+    h2 {
+        display: block;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    .agenda__event {
+        padding-block: 12px;
+        border-bottom: 1px solid #e8e6bd;
+        overflow-wrap: anywhere;
+
+        & > * + * { margin-top: 4px; }
+        h3 { margin-bottom: 6px; }
+    }
+
+    .agenda__date {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 12px;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+    .agenda__past { font-weight: normal; }
+}
+
 .section__about {
     background-color: $tertiaryColor;
     color: #000;
@@ -445,10 +530,8 @@ em {
     padding-bottom: 50px;
 
     @media (max-width: $tablet - 1px) {
-        section {
-            &:last-child {
-                margin-top: 30px;
-            }
+        .about__column + .about__column {
+            margin-top: 30px;
         }
     }
 
@@ -458,7 +541,7 @@ em {
         }
 
 
-        section {
+        .about__column {
             width: 50%;
 
             &:first-child {
@@ -470,11 +553,17 @@ em {
                 padding-left: 20px;
                 text-align: right;
             }
+
+            &:only-child {
+                width: 100%;
+                padding-inline: 0;
+                text-align: center;
+            }
         }
     }
 
 
-    .about__catering {
+    .about__column + .about__column {
         @media (min-width: $desktop) {
             position: relative;
 

@@ -1,90 +1,67 @@
-import Image from "next/image";
-import Hours from "./openinghours";
+import { useEffect, useState } from "react";
+import Contact from "./contact";
+import ContentfulPicture from "./contentful-picture";
 
-function ToggleMenu(e) {
-  const elm = document.querySelector("[data-hamburger]");
-  document.body.classList.toggle("is-menu-active");
-  elm.classList.toggle("is-active");
-}
+const links = new Map([
+  ["about", "aboutLabel"], ["pictures", "galleryLabel"],
+  ["menu", "menuLabel"], ["jobs", "jobsLabel"],
+]);
 
-function CloseMenu() {
-  const elm = document.querySelector("[data-hamburger]");
-  document.body.classList.remove("is-menu-active");
-  elm.classList.remove("is-active");
-}
+export default function Header({ site, inspect, anchors }) {
+  const [open, setOpen] = useState(false);
 
-function Goto(e, id) {
-  const elm = document.querySelector(id);
-  const offset = elm.offsetTop;
-  window.scrollTo({ top: offset, left: 0, behavior: "smooth" });
-  CloseMenu();
-  e.preventDefault();
-}
+  useEffect(() => {
+    document.body.classList.toggle("is-menu-active", open);
+    return () => document.body.classList.remove("is-menu-active");
+  }, [open]);
 
-function Header() {
+  if (!site?.fields) return null;
+  const { logo, headerImage, title, mobileMenuLabel } = site.fields;
+
+  function goTo(event, id) {
+    const target = document.getElementById(id);
+    if (!target || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    setOpen(false);
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
-    <div className="section__header">
+    <header className="section__header" id="top">
+      <ContentfulPicture asset={headerImage} alt="" className="section-background" priority quality={62} {...inspect?.(site, "headerImage")} />
       <button
-        className="hamburger hamburger--spin"
+        className={`hamburger hamburger--spin${open ? " is-active" : ""}`}
         type="button"
-        aria-label="menu"
+        aria-label={mobileMenuLabel}
+        aria-expanded={open}
+        aria-controls="main-navigation"
         data-hamburger
-        onClick={(e) => ToggleMenu(e)}
+        onClick={() => setOpen(!open)}
+        {...inspect?.(site, "mobileMenuLabel")}
       >
-        <span className="hamburger-box">
-          <span className="hamburger-inner"></span>
-        </span>
-        <span className="hamburger-label">Menu</span>
+        <span className="hamburger-box"><span className="hamburger-inner" /></span>
+        <span className="hamburger-label">{mobileMenuLabel}</span>
       </button>
       <div className="container">
-        <nav className="nav__main">
+        <nav className="nav__main" id="main-navigation" aria-label="Hoofdnavigatie">
           <ul>
-            <li>
-              <a href="#about" onClick={(e) => Goto(e, "#about")}>
-                Over Taberna
-              </a>
-            </li>
-            <li>
-              <a href="#pictures" onClick={(e) => Goto(e, "#pictures")}>
-                Sfeerimpressie
-              </a>
-            </li>
-            <li>
-              <a href="#menu" onClick={(e) => Goto(e, "#menu")}>
-                Menukaart
-              </a>
-            </li>
-            <li>
-              <a href="#jobs" onClick={(e) => Goto(e, "#jobs")}>
-                Vacatures
-              </a>
-            </li>
+            {anchors.filter((id) => links.has(id)).map((id) => {
+              const field = links.get(id);
+              return (
+                <li key={id} data-navigation={id}>
+                  <a href={`#${id}`} onClick={(event) => goTo(event, id)} {...inspect?.(site, field)}>
+                    {site.fields[field]}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <div className="logo">
-          <Image src="/logo.svg" alt="Taberna" width={5811} height={2976} />
+          <ContentfulPicture asset={logo} alt={logo?.fields?.description || title} eager sizes="(max-width: 410px) calc(100vw - 50px), 360px" {...inspect?.(site, "logo")} />
         </div>
-        <section className="reachability">
-          <div className="reachability__hours">
-            <Hours />
-          </div>
-          <div className="reachability__contact">
-            Taberna Weert
-            <br />
-            Beekstraat 60a
-            <br />
-            <a href="tel://0495586339">Tel: 0495 586 339</a>
-            <br />
-            <a href="mailto:info@tabernaweert.nl">info@tabernaweert.nl</a>
-            <br />
-            <a href="https://www.facebook.com/tabernaweert/">
-              Taberna Facebook
-            </a>
-          </div>
-        </section>
+        <Contact site={site} inspect={inspect} />
       </div>
-    </div>
+    </header>
   );
 }
-
-export default Header;

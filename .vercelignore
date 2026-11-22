@@ -1,0 +1,6 @@
+.env
+.env.*
+.DS_Store
+opencode.json
+.cache/
+dist/

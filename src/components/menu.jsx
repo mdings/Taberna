@@ -59,13 +59,13 @@ function groupItems(items) {
   return groups;
 }
 
-function MenuSection({ section, font, inspect, itemAnchorSections }) {
+function MenuSection({ section, font, inspect, itemAnchorSections, anchorPrefix }) {
   const { title, intro, items, outro } = section.fields;
   const anchorFor = (item) => itemAnchorSections.get(item.sys.id) === section.sys.id
-    ? `menu-entry-${item.sys.id}`
+    ? `${anchorPrefix}-${item.sys.id}`
     : undefined;
   return (
-    <article className="menu" id={`menu-entry-${section.sys.id}`}>
+    <article className="menu" id={`${anchorPrefix}-${section.sys.id}`}>
       <h3 className={`menu__name ${font.className}`} {...inspect(section, "title")}>{title}</h3>
       {intro && (
         <section className="menu__intro" {...inspect(section, "intro")}>
@@ -99,7 +99,7 @@ function MenuSection({ section, font, inspect, itemAnchorSections }) {
   );
 }
 
-export default function Menu({ menu, font, inspect = noInspector }) {
+export default function Menu({ menu, id = "menu", font, inspect = noInspector }) {
   const { title, introduction, sections } = menu.fields;
   const resolvedSections = (sections ?? []).filter((section) => section?.fields);
   const itemAnchorSections = new Map();
@@ -112,7 +112,7 @@ export default function Menu({ menu, font, inspect = noInspector }) {
   }
 
   return (
-    <section className="section__menu" id="menu">
+    <section className="section__menu" id={id}>
       <div className="container container--small">
         <h2 className={font.className} {...inspect(menu, "title")}>{title}</h2>
         {introduction && (
@@ -129,6 +129,7 @@ export default function Menu({ menu, font, inspect = noInspector }) {
             font={font}
             inspect={inspect}
             itemAnchorSections={itemAnchorSections}
+            anchorPrefix={id === "menu" ? "menu-entry" : `${id}-entry`}
           />
         ))}
       </div>

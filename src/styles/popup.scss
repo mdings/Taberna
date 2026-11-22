@@ -23,3 +23,46 @@
     height: auto;
   }
 }
+
+.detail-menu-document {
+  min-height: 100vh;
+  background-color: #f5f0eb;
+  color: #262626;
+
+  .detail-images,
+  .container {
+    margin-inline: auto;
+    max-width: 800px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.detail-breadcrumb {
+  padding: 8px 12px;
+  text-align: center;
+  color: #262626;
+  background: #f1f3f4;
+
+  a { text-decoration: underline; }
+}
+
+.detail-menu-document .detail-copy {
+  padding: 24px 15px;
+
+  a { text-decoration: underline; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

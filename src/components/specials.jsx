@@ -1,4 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+import { contentfulPdfUrl } from "@/lib/contentful-assets";
+
+const detailRoutes = {
+  "munttheater-diner": "/munttheater-diner",
+  "typisch-taberna": "/typisch-taberna",
+};
 
 function ExternalLinkIcon() {
   return (
@@ -12,63 +19,51 @@ function ExternalLinkIcon() {
   );
 }
 
-function Specials({ font }) {
+function Offer({ offer, draftMode, inspect }) {
+  const { title, description, linkLabel, detailPage, document } = offer.fields;
+  const slug = detailPage?.fields?.slug;
+  const detailUrl = Object.hasOwn(detailRoutes, slug) ? detailRoutes[slug] : null;
+  const pdfUrl = contentfulPdfUrl(document);
+
+  function openTheater(event) {
+    if (draftMode || slug !== "munttheater-diner" || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    window.open(event.currentTarget.href, "_blank", "popup,noopener,width=600,height=750");
+  }
+
   return (
-    <section className="section__specials">
+    <div>
+      <h3 {...inspect?.(offer, "title")}>{title}</h3>
+      {(description || (linkLabel && (detailUrl || pdfUrl))) && (
+        <p>
+          {description && <span className="editorial-lines" {...inspect?.(offer, "description")}>{description}</span>}
+          {description && linkLabel && (detailUrl || pdfUrl) && <br />}
+          {linkLabel && (detailUrl ? (
+            <Link href={detailUrl} target={draftMode ? undefined : "_blank"} rel="noopener" prefetch={false} onClick={openTheater} {...inspect?.(offer, "linkLabel")}>
+              {linkLabel}{!draftMode && <ExternalLinkIcon />}
+            </Link>
+          ) : pdfUrl && (
+            <a href={pdfUrl} target="_blank" rel="noopener" {...inspect?.(offer, "linkLabel")}>
+              {linkLabel}<ExternalLinkIcon />
+            </a>
+          ))}
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default function Specials({ section, id, font, draftMode, inspect }) {
+  const { title, offers } = section.fields;
+
+  return (
+    <section className="section__specials" id={id}>
       <div className="container">
-        <h2 className={font.className}>Specials</h2>
-
-        <h3>Munttheater diner</h3>
-        <p>
-          <a
-            href="/munttheater-diner"
-            target="_blank"
-            rel="noopener"
-            onClick={(e) => {
-              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-              e.preventDefault();
-              window.open(
-                e.currentTarget.href,
-                "_blank",
-                "popup,noopener,width=600,height=750"
-              );
-            }}
-          >
-            Maak een avondje uit in het Munttheater compleet met het
-            &quot;Munttheater-diner&quot;!
-            <ExternalLinkIcon />
-          </a>
-        </p>
-
-        <h3>Taberna lunchdeal</h3>
-        <p>
-          {" "}
-          Voor 3,8 extra krijg je een kleine soep naar keuze bij je Panino naar
-          keuze
-        </p>
-
-        <h3>Donderdagavond</h3>
-        <p>
-          3 gangen keuzemenu vanaf 28,- p.p. <br />
-          <a href="/3-gangen-keuzemenu.pdf" target="_blank" rel="noopener">
-            (Bekijk het keuzemenu)
-            <ExternalLinkIcon />
-          </a>
-        </p>
-
-        <h3>Vrijdagavond</h3>
-        <p>
-          Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit
-          5 gangen voor 35,- of 6 gangen voor 37,50)
-          <br />
-          <a href="/typisch-taberna" target="_blank" rel="noopener">
-            (Bekijk het menu)
-            <ExternalLinkIcon />
-          </a>
-        </p>
+        <h2 className={font.className} {...inspect?.(section, "title")}>{title}</h2>
+        <div {...inspect?.(section, "offers")}>
+          {offers?.filter((offer) => offer?.fields).map((offer) => <Offer key={offer.sys.id} offer={offer} draftMode={draftMode} inspect={inspect} />)}
+        </div>
       </div>
     </section>
   );
 }
-
-export default Specials;

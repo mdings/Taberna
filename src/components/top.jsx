@@ -1,15 +1,20 @@
-function Top() {
+function Top({ site, inspect }) {
+  const label = site?.fields?.backToTopLabel;
+  if (!label) return null;
   return (
     <div className="totop">
-      <span
+      <a
         className="button"
         data-totop
-        onClick={() => {
+        href="#top"
+        {...inspect?.(site, "backToTopLabel")}
+        onClick={(event) => {
+          event.preventDefault();
           window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         }}
       >
-        Naar boven
-      </span>
+        {label}
+      </a>
     </div>
   );
 }

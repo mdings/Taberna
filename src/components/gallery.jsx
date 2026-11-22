@@ -1,44 +1,10 @@
 import { useLayoutEffect, useRef } from "react";
-
-const localPhotos = [
-  ["012", 300], ["042", 300], ["072", 600], ["052", 300], ["048", 450],
-  ["073", 300], ["055", 450], ["077", 300], ["139", 300], ["171", 450],
-  ["098", 300], ["177", 450], ["122", 300], ["079", 450], ["147", 300],
-  ["180", 600], ["148", 300], ["190", 300],
-].map(([id, height]) => ({
-  id,
-  image: { url: `/img/gallery/${id}-taberna-800x600.jpg`, width: 800, height: 600 },
-  desktopCrop: height === 600 ? "2:3" : height === 450 ? "8:9" : undefined,
-}));
+import { contentfulImage, imageSrcSet, imageUrl } from "@/lib/contentful-assets";
 
 const desktopMedia = "(min-width: 768px)";
 // Three columns, each with 20px of combined picture and image padding.
 const gallerySizes = "(min-width: 1301px) 414px, (min-width: 768px) calc((100vw - 70px) / 3), 100vw";
-const imageWidths = [240, 320, 400, 480, 640, 800, 960, 1200, 1600];
 const desktopCrops = new Map([["8:9", [8, 9]], ["2:3", [2, 3]]]);
-const resizableTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/avif", "image/tiff"]);
-const imageHosts = new Set(["images.ctfassets.net", "images.eu.ctfassets.net", "assets.ctfassets.net", "assets.eu.ctfassets.net"]);
-
-function fromAsset(asset) {
-  const file = asset?.fields?.file;
-  if (!file?.url || !file.contentType?.startsWith("image/")) return null;
-
-  let url;
-  try {
-    url = new URL(file.url.startsWith("//") ? `https:${file.url}` : file.url);
-  } catch {
-    return null;
-  }
-  if (url.protocol !== "https:" || !imageHosts.has(url.host)) return null;
-
-  const { width, height } = file.details?.image ?? {};
-  return {
-    url: url.href,
-    width,
-    height,
-    resizable: width > 0 && height > 0 && url.hostname.startsWith("images.") && resizableTypes.has(file.contentType),
-  };
-}
 
 function desktopVariant(image, crop) {
   if (!crop || !image.resizable) return null;
@@ -49,36 +15,17 @@ function desktopVariant(image, crop) {
     : null;
 }
 
-function imageUrl(image, width, format) {
-  if (!image.resizable) return image.url;
-  const url = new URL(image.url);
-  const targetWidth = Math.min(width, image.width);
-  url.searchParams.set("w", targetWidth);
-  url.searchParams.set("q", "78");
-  if (image.crop) {
-    const [wide, tall] = image.crop;
-    url.searchParams.set("h", Math.round(targetWidth * tall / wide));
-    url.searchParams.set("fit", "fill");
-  }
-  if (format) url.searchParams.set("fm", format);
-  return url.href;
-}
-
 function srcSet(image, format) {
-  if (!image.resizable) return image.url;
-  const max = Math.min(image.width, imageWidths.at(-1));
-  return [...imageWidths.filter((width) => width < max), max]
-    .map((width) => `${imageUrl(image, width, format)} ${width}w`)
-    .join(", ");
+  return imageSrcSet(image, format, 1600);
 }
 
-function GalleryPicture({ photo, inspect }) {
+function GalleryPicture({ photo, inspect, anchorPrefix }) {
   const { entry, image, desktopCrop, alt } = photo;
   const crop = desktopCrops.get(desktopCrop);
   const desktop = desktopVariant(image, crop);
   return (
     <picture
-      id={entry ? `gallery-photo-${photo.id}` : undefined}
+      id={`${anchorPrefix}-${photo.id}`}
       className={crop && !desktop ? "gallery-local-crop" : undefined}
       style={crop && !desktop ? { "--gallery-desktop-ratio": crop.join(" / ") } : undefined}
       {...(entry && inspect?.(entry, "image"))}
@@ -106,7 +53,7 @@ function GalleryPicture({ photo, inspect }) {
   );
 }
 
-function GalleryLayout({ photos, inspectorProps, inspect }) {
+function GalleryLayout({ photos, id, label, inspectorProps, inspect }) {
   const galleryRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -151,32 +98,34 @@ function GalleryLayout({ photos, inspectorProps, inspect }) {
   }, []);
 
   return (
-    <section className="section__pics" ref={galleryRef} id="pictures" aria-label="Sfeerimpressie" {...inspectorProps}>
-      {photos.map((photo) => <GalleryPicture key={photo.id} photo={photo} inspect={inspect} />)}
+    <section className="section__pics" ref={galleryRef} id={id} aria-label={label} {...inspectorProps}>
+      {photos.map((photo) => (
+        <GalleryPicture key={photo.id} photo={photo} inspect={inspect} anchorPrefix={id === "pictures" ? "gallery-photo" : `${id}-photo`} />
+      ))}
     </section>
   );
 }
 
-export default function Gallery({ gallery, inspect }) {
-  const photos = gallery
-    ? (gallery.fields.photos ?? []).flatMap((entry) => {
-      const image = fromAsset(entry?.fields?.image);
+export default function Gallery({ gallery, id = "pictures", label, inspect }) {
+  const photos = (gallery?.fields?.photos ?? []).flatMap((entry) => {
+      const image = contentfulImage(entry?.fields?.image);
       if (!image) return [];
       return [{
         id: entry.sys.id,
         entry,
-        image,
+        image: { ...image, quality: 68 },
         desktopCrop: entry.fields.desktopCrop,
         alt: entry.fields.alt,
       }];
-    })
-    : localPhotos;
+  });
 
   return (
     <GalleryLayout
       // Flickity moves DOM nodes; remount its container on structural live edits.
       key={photos.map(({ id, image }) => `${id}:${image.width}x${image.height}`).join(",")}
       photos={photos}
+      id={id}
+      label={label}
       inspect={inspect}
       inspectorProps={gallery && inspect?.(gallery, "photos")}
     />
