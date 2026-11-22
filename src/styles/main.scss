@@ -26,6 +26,7 @@
 .announcement {
     text-align: center;
     background-color: $errorColor;
+    color: #fff;
     padding: 16px;
     font-weight: bolder;
     font-size: 15px;
@@ -582,6 +583,11 @@ em {
     }
 }
 
+// Delicatessen keeps its alignment when editors reorder the homepage sections.
+#section-5CvAOqcXYBV31Tr2DQVadC {
+    text-align: left;
+}
+
 .section__pics {
     background-color: #fff;
     max-width: 1300px;
@@ -762,51 +768,44 @@ em {
                 padding: 0 20px;
                 margin-bottom: 20px;
                 width: 100%;
-
-                @media (max-width: $desktop - 1px) {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                }
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                align-content: start;
+                justify-items: center;
+                row-gap: 2px;
 
                 .item {
-                    display: block;
                     font-weight: 400;
+                }
 
-                    @media (max-width: $desktop - 1px) {
-                        flex: 0 1 100%;
-
-                        &__price {
-                            margin-left: 10px;
-                            order: 10;
-                        }
-                    }
+                > .item,
+                > .item__price {
+                    overflow-wrap: anywhere;
                 }
 
                 @media (min-width: $desktop) {
-                    align-items: baseline;
-                    align-content: flex-start;
+                    grid-template-columns: minmax(0, 1fr) fit-content(45%);
+                    column-gap: 12px;
+                    align-items: start;
+                    justify-items: stretch;
+                    text-align: start;
                     font-weight: bolder;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
                     width: 50%;
 
-                    .item {
-                        display: inline-block;
+                    > .item__price {
+                        grid-column: 2;
+                        text-align: end;
                     }
                 }
 
                 > .item__description {
+                    grid-column: 1 / -1;
+                    inline-size: 100%;
                     font-weight: 200;
                     font-style: italic;
                     font-size: 14px;
-
-                    @media (min-width: $desktop) {
-                        flex: 0 1 100%;
-                        text-align: left;
-                    }
-
+                    max-inline-size: min(100%, 48ch);
+                    overflow-wrap: anywhere;
 
                     .item__price,
                     .bold {
@@ -826,6 +825,21 @@ em {
     padding: 8px 12px;
     background: #f1f3f4;
     color: #262626;
+}
+
+.announcement-preview-button {
+    width: 100%;
+    border: 0;
+    font: inherit;
+    flex-wrap: wrap;
+    cursor: pointer;
+
+    &:hover { background: #e5e7e9; }
+    &:focus-visible { outline: 2px solid #262626; outline-offset: -2px; }
+}
+
+.announcement-preview-action {
+    text-decoration: underline;
 }
 
 .item {

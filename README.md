@@ -38,7 +38,7 @@ The website reads the Contentful environment's default locale (`nl-NL`) and uses
    ```
 
    Replace the host and secret, leaving `{entry.sys.id}` as written. Use the separate preview secret here, never either API token. The preview host must allow framing by `https://app.contentful.com` (already configured in Next.js; avoid adding a conflicting header at the hosting layer).
-4. Open **Homepage – Taberna Weert** and select **Live Preview**. Edit the linked content to see updates. Refresh the preview if a newly linked entry isn't loaded yet. **Voorbeeld sluiten** switches back to published content.
+4. Open **Homepage – Taberna Weert** and select **Live Preview**. Edit the linked content to see updates. Refresh the preview if a newly linked entry isn't loaded yet. Close the preview pane in Contentful when you're done.
 
 For a local Draft Mode check, open `http://localhost:3000/api/contentful/preview?secret=<CONTENTFUL_PREVIEW_SECRET>` directly in your browser. Use the deployed HTTPS URL for side-by-side preview in Contentful.
 
@@ -47,6 +47,10 @@ For a local Draft Mode check, open `http://localhost:3000/api/contentful/preview
 Open [Sfeerimpressie – Homepage](https://app.contentful.com/spaces/y7xio8b6lt17/environments/master/entries/7Ki9Lcqcz94oUPdJS0gxKS) to reorder, add, or remove photos. Upload one high-quality source per **Fotogalerij – Foto** entry. Leave **Beeldverhouding op desktop** blank to keep its natural proportions, or choose a portrait ratio for the desktop masonry. Add Dutch alt text when the image conveys information. Publish the media asset and photo entry before publishing changes to the gallery's list.
 
 The Contentful Images API generates responsive widths, WebP files, and any desktop crop from the same source. Mobile uses the uncropped image in the swipeable carousel. The browser selects a size appropriate for its viewport and display density.
+
+## Homepage announcement
+
+Edit [Meldingsbalk – Homepage](https://app.contentful.com/spaces/y7xio8b6lt17/environments/master/entries/7zGMRS6rgFiWhM3KBO3oIN) to show the red banner above the homepage header. In **Melding**, select the words you want to link, choose **Link to asset**, and select a published PDF from Media. Inline PDF links open in a new tab. Turn **Tonen bovenaan de homepage** on and publish this entry. To remove the banner, turn it off and publish again. The homepage itself does not need to be republished. In Homepage Live Preview, the banner or its disabled-state indicator appears above the header.
 
 ## LLM-friendly pages
 

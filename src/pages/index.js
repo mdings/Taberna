@@ -6,7 +6,8 @@ import Header from "@/components/header";
 import HomepageSections from "@/components/homepage-sections";
 import Contact from "@/components/contact";
 import SeoHead from "@/components/seo-head";
-import { getHomeContent } from "@/lib/contentful";
+import Announcement from "@/components/announcement";
+import { getAnnouncement, getHomeContent } from "@/lib/contentful";
 import { homepageSectionAnchors } from "@/lib/home-sections";
 import { agendaDay } from "@/lib/agenda";
 import { homepageMetadata, restaurantGraph } from "@/lib/seo";
@@ -24,14 +25,14 @@ const ac = Amatic_SC({
 });
 
 export async function getStaticProps({ draftMode = false }) {
-  const home = await getHomeContent({ draftMode });
+  const [home, announcement] = await Promise.all([getHomeContent({ draftMode }), getAnnouncement({ draftMode })]);
   return {
-    props: { home, draftMode, today: agendaDay() },
+    props: { home, announcement, draftMode, today: agendaDay() },
     ...(!draftMode ? { revalidate: 60 } : {}),
   };
 }
 
-function Homepage({ home, today, draftMode = false, inspect }) {
+function Homepage({ home, announcement, today, draftMode = false, inspect, openEntry }) {
   const { siteDetails } = home.fields;
   const metadata = homepageMetadata(home);
   const sections = homepageSectionAnchors(home);
@@ -67,6 +68,7 @@ function Homepage({ home, today, draftMode = false, inspect }) {
         {!draftMode && <link rel="alternate" type="text/markdown" href="/index.md" />}
       </Head>
       <div className={mw.className} style={{ backgroundColor: "#ffffff" }}>
+        <Announcement entry={announcement} draftMode={draftMode} inspect={inspect} openEntry={openEntry} />
         <Header site={siteDetails} inspect={inspect} anchors={anchors} />
         <HomepageSections home={home} sections={sections} font={ac} today={today} draftMode={draftMode} inspect={inspect} />
 
@@ -87,12 +89,12 @@ function Homepage({ home, today, draftMode = false, inspect }) {
   );
 }
 
-export default function Home({ home, draftMode, today }) {
-  if (!draftMode) return <Homepage home={home} today={today} />;
+export default function Home({ home, announcement, draftMode, today }) {
+  if (!draftMode) return <Homepage home={home} announcement={announcement} today={today} />;
 
   return (
-    <ContentfulPreview entry={home}>
-      {(updatedHome, inspect) => <Homepage home={updatedHome} today={today} draftMode inspect={inspect} />}
+    <ContentfulPreview entry={home} relatedEntry={announcement}>
+      {(updatedHome, inspect, updatedAnnouncement, openEntry) => <Homepage home={updatedHome} announcement={updatedAnnouncement} today={today} draftMode inspect={inspect} openEntry={openEntry} />}
     </ContentfulPreview>
   );
 }

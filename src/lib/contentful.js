@@ -4,6 +4,7 @@ import { homepageSections } from "./home-sections";
 export const menuEntryId = process.env.CONTENTFUL_MENU_ENTRY_ID || "70rtKHhJPaHtxERhg4gk5w";
 export const galleryEntryId = process.env.CONTENTFUL_GALLERY_ENTRY_ID || "7Ki9Lcqcz94oUPdJS0gxKS";
 export const homeEntryId = process.env.CONTENTFUL_HOME_ENTRY_ID || "6u1fu7pLWquc2VXD201HoQ";
+const announcementEntryId = process.env.CONTENTFUL_ANNOUNCEMENT_ENTRY_ID || "7zGMRS6rgFiWhM3KBO3oIN";
 
 function getClient(draftMode) {
   const tokenKey = draftMode ? "CONTENTFUL_PREVIEW_ACCESS_TOKEN" : "CONTENTFUL_ACCESS_TOKEN";
@@ -55,6 +56,10 @@ export async function getHomeContent({ draftMode }) {
 
 export async function getDetailContent(slug, { draftMode }) {
   return getEntry({ content_type: "detailPage", "fields.slug": slug, include: 1 }, { draftMode, label: "detail page" });
+}
+
+export async function getAnnouncement({ draftMode }) {
+  return getEntry({ content_type: "siteAnnouncement", "sys.id": announcementEntryId, include: 1 }, { draftMode, label: "announcement" });
 }
 
 export async function getDinnerDocument() {

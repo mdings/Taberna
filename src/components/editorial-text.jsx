@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { contentfulPdfUrl } from "@/lib/contentful-assets";
 
 function allowedLink(uri) {
   if (typeof uri !== "string") return false;
@@ -10,6 +11,10 @@ function allowedLink(uri) {
   }
 }
 
+function isPdfLink(uri) {
+  return /\.pdf(?:$|[?#])/i.test(uri);
+}
+
 const options = {
   preserveWhitespace: true,
   renderMark: {
@@ -17,7 +22,15 @@ const options = {
     italic: (text) => <em>{text}</em>,
   },
   renderNode: {
-    hyperlink: ({ data }, children) => allowedLink(data.uri) ? <a href={data.uri}>{children}</a> : children,
+    hyperlink: ({ data }, children) => {
+      if (!allowedLink(data.uri)) return children;
+      const externalPdf = isPdfLink(data.uri);
+      return <a href={data.uri} target={externalPdf ? "_blank" : undefined} rel={externalPdf ? "noopener" : undefined}>{children}</a>;
+    },
+    "asset-hyperlink": ({ data }, children) => {
+      const url = contentfulPdfUrl(data.target);
+      return url ? <a href={url} target="_blank" rel="noopener">{children}</a> : children;
+    },
   },
 };
 

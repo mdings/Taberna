@@ -1,31 +1,32 @@
+import { ContentfulLivePreview } from "@contentful/live-preview";
 import {
   ContentfulLivePreviewProvider,
   useContentfulInspectorMode,
   useContentfulLiveUpdates,
 } from "@contentful/live-preview/react";
 
-function EditableEntry({ entry, children }) {
+function EditableEntry({ entry, relatedEntry, children }) {
   const updatedEntry = useContentfulLiveUpdates(entry);
+  const updatedRelatedEntry = useContentfulLiveUpdates(relatedEntry, { skip: !relatedEntry });
   const inspectorProps = useContentfulInspectorMode();
+  const openEntry = (target, fieldId) => ContentfulLivePreview.openEntryInEditor({
+    entryId: target.sys.id,
+    fieldId,
+    locale: target.sys.locale ?? entry.sys.locale,
+    space: target.sys.space?.sys?.id,
+    environment: target.sys.environment?.sys?.id,
+  });
 
-  return (
-    <>
-      <form method="post" action="/api/contentful/exit-preview" className="preview-bar">
-        <span>Conceptweergave</span>
-        <button type="submit">Voorbeeld sluiten</button>
-      </form>
-      {children(updatedEntry, (target, fieldId, kind) => inspectorProps({
-        ...(kind === "asset" ? { assetId: target.sys.id } : { entryId: target.sys.id }),
-        fieldId,
-      }))}
-    </>
-  );
+  return children(updatedEntry, (target, fieldId, kind) => inspectorProps({
+    ...(kind === "asset" ? { assetId: target.sys.id } : { entryId: target.sys.id }),
+    fieldId,
+  }), updatedRelatedEntry, openEntry);
 }
 
-export default function ContentfulPreview({ entry, children }) {
+export default function ContentfulPreview({ entry, relatedEntry, children }) {
   return (
     <ContentfulLivePreviewProvider locale={entry.sys.locale} targetOrigin="https://app.contentful.com">
-      <EditableEntry entry={entry}>{children}</EditableEntry>
+      <EditableEntry entry={entry} relatedEntry={relatedEntry}>{children}</EditableEntry>
     </ContentfulLivePreviewProvider>
   );
 }
