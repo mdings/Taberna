@@ -1,5 +1,8 @@
 import Head from "next/head";
-import { Merriweather } from "@next/font/google";
+import Image from "next/image";
+import { Merriweather } from "next/font/google";
+import menuPageOne from "../../public/typisch-taberna-1.png";
+import menuPageTwo from "../../public/typisch-taberna-2.png";
 
 const mw = Merriweather({
   weight: ["300", "400"],
@@ -27,15 +30,17 @@ export default function TypischTaberna() {
           padding: "0",
         }}
       >
-        <img
-          src="/typisch-taberna-1.png"
+        <Image
+          src={menuPageOne}
           alt="Typisch Taberna - Pagina 1"
-          style={{ width: "100%", maxWidth: "800px", display: "block" }}
+          sizes="(max-width: 800px) 100vw, 800px"
+          style={{ width: "100%", height: "auto", maxWidth: "800px", display: "block" }}
         />
-        <img
-          src="/typisch-taberna-2.png"
+        <Image
+          src={menuPageTwo}
           alt="Typisch Taberna - Pagina 2"
-          style={{ width: "100%", maxWidth: "800px", display: "block" }}
+          sizes="(max-width: 800px) 100vw, 800px"
+          style={{ width: "100%", height: "auto", maxWidth: "800px", display: "block" }}
         />
       </div>
     </>

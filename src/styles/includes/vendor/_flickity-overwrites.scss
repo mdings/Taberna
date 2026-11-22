@@ -1,16 +1,12 @@
-.flickity-prev-next-button {
-
-  display: none;
+.flickity-page-dots {
+  bottom: 20px;
 }
 
-.flickity-page-dots {
+.flickity-page-dot {
+  margin: 0 3px;
+  background: rgba(255, 255, 255, .6);
 
-  bottom: 20px;
-
-  .dot {
-
-      opacity: .6;
-      margin: 0 3px;
-      background: #fff;
+  &.is-selected {
+    background: #fff;
   }
 }

@@ -1,38 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Taberna Weert
 
-## Getting Started
+Restaurant website built with Next.js and React. Pages live in `src/pages`, shared components in `src/components`, and static assets in `public`.
 
-First, run the development server:
+## Development
 
-```bash
+Use Node.js 24 LTS (also specified in `.nvmrc`).
+
+```sh
+nvm use
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Contentful menu
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The homepage uses the [Menukaart entry](https://app.contentful.com/spaces/y7xio8b6lt17/environments/master/entries/70rtKHhJPaHtxERhg4gk5w). Reorder sections on that entry and dishes under **Items in volgorde** on each section. Prices are display text, so both `8,-` and `5,- / 7,-` are valid. Publish changed dishes and any sections or menu entries whose links changed. The specials pages and their PDFs are separate from the homepage menu.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Copy `.env.example` to `.env.local`. Create or select an API key in [Contentful → Settings → API keys](https://app.contentful.com/spaces/y7xio8b6lt17/api/keys) with access to `master`. Set `CONTENTFUL_ACCESS_TOKEN` to its Content Delivery API token and `CONTENTFUL_PREVIEW_ACCESS_TOKEN` to its Content Preview API token.
+2. Generate a separate URL-safe `CONTENTFUL_PREVIEW_SECRET` with `openssl rand -hex 32`. Keep the tokens and secret server-side. Add the same environment variables to your deployment before building. If the delivery token is absent, the site renders the original local menu for development and rollout; it won't receive published edits. With the delivery token set, the homepage revalidates published content on traffic after a 60-second interval.
+3. After deploying over HTTPS, open **Settings → Preview → Create preview platform** in Contentful. Name it **Taberna Live Preview**, enable **Menukaart**, **Menukaart – Sectie**, and **Menukaart – Item**, and set each preview URL to:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```text
+   https://<your-preview-host>/api/contentful/preview?secret=<CONTENTFUL_PREVIEW_SECRET>&entry={entry.sys.id}
+   ```
 
-## Learn More
+   Replace the host and secret, leaving `{entry.sys.id}` as written. Use the separate preview secret here, never either API token. The preview host must allow framing by `https://app.contentful.com` (already configured in Next.js; avoid adding a conflicting header at the hosting layer).
+4. Open an entry and select **Live Preview**. Edit a dish or price to see updates and use Inspector Mode to jump to the corresponding field. Link new sections and items into **Menukaart** to see them in context; refresh the preview if a newly linked entry isn't loaded yet. **Voorbeeld sluiten** switches back to published content.
 
-To learn more about Next.js, take a look at the following resources:
+For a local Draft Mode check, open `http://localhost:3000/api/contentful/preview?secret=<CONTENTFUL_PREVIEW_SECRET>` directly in your browser. Use the deployed HTTPS URL for side-by-side preview in Contentful.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Configure the deployment to use Node.js 24, then run:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```sh
+npm run lint
+npm run build
+npm start
+```

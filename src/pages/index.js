@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Script from "next/script";
 import Image from "next/image";
-import { Merriweather, Amatic_SC } from "@next/font/google";
+import dynamic from "next/dynamic";
+import { Merriweather, Amatic_SC } from "next/font/google";
+import teamPhoto from "../../public/team.jpg";
 import Header from "@/components/header";
 import Intro from "@/components/intro";
 import Specials from "@/components/specials";
@@ -10,6 +12,10 @@ import Gallery from "@/components/gallery";
 import Menu from "@/components/menu";
 import Hours from "@/components/openinghours";
 import Top from "@/components/top";
+import { getRestaurantMenu, menuLocale } from "@/lib/contentful";
+
+const MenuPreview = dynamic(() => import("@/components/menu-preview"));
+const LegacyMenu = dynamic(() => import("@/components/legacy-menu"));
 
 const mw = Merriweather({
   weight: ["300", "400"],
@@ -21,7 +27,15 @@ const ac = Amatic_SC({
   subsets: ["latin"],
 });
 
-export default function Home() {
+export async function getStaticProps({ draftMode = false }) {
+  const menu = await getRestaurantMenu({ draftMode });
+  return {
+    props: { menu, draftMode, locale: menuLocale },
+    ...(menu && !draftMode ? { revalidate: 60 } : {}),
+  };
+}
+
+export default function Home({ menu, draftMode, locale }) {
   return (
     <>
       <Head>
@@ -30,6 +44,7 @@ export default function Home() {
         <meta name="description" content="Welkom bij Taberna" />
         <meta name="author" content="Taberna Weert" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {draftMode && <meta name="robots" content="noindex, nofollow" />}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -57,7 +72,13 @@ export default function Home() {
         <Top />
         <Gallery />
         <Top />
-        <Menu font={ac} />
+        {draftMode ? (
+          <MenuPreview menu={menu} font={ac} locale={locale} />
+        ) : menu ? (
+          <Menu menu={menu} font={ac} />
+        ) : (
+          <LegacyMenu font={ac} />
+        )}
 
         <section className="section__jobs" id="jobs">
           <div className="container container--small">
@@ -69,11 +90,9 @@ export default function Home() {
               ons team? Laat van je horen en mail ons!
             </p>
             <Image
-              src="/team.jpg"
+              src={teamPhoto}
               alt="Taberna Team!"
-              width={0}
-              height={0}
-              sizes="100vw"
+              sizes="(max-width: 800px) 100vw, 800px"
               style={{
                 width: "100%",
                 height: "auto",
@@ -108,10 +127,12 @@ export default function Home() {
           </div>
         </footer>
 
-        <Script
-          type="text/javascript"
-          src="https://gotable.app/restaurants/130189/reservations/new.js?locale=nl&layout=floating&variant=themed/337&position=bottom-right"
-        ></Script>
+        {!draftMode && (
+          <Script
+            type="text/javascript"
+            src="https://gotable.app/restaurants/130189/reservations/new.js?locale=nl&layout=floating&variant=themed/337&position=bottom-right"
+          />
+        )}
       </div>
     </>
   );

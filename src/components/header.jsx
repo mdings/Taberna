@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hours from "./openinghours";
 
 function ToggleMenu(e) {
@@ -61,7 +62,7 @@ function Header() {
           </ul>
         </nav>
         <div className="logo">
-          <img src="/logo.svg" alt="Logo" />
+          <Image src="/logo.svg" alt="Taberna" width={5811} height={2976} />
         </div>
         <section className="reachability">
           <div className="reachability__hours">

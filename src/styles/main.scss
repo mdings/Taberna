@@ -1,15 +1,13 @@
-$hamburger-layer-color: #fff;
-
-@import "reset-css/sass/reset.scss";
-@import "hamburgers/_sass/hamburgers/hamburgers";
-@import "includes/include-media";
-@import "includes/vars";
-@import "includes/buttons";
-@import "includes/headlines";
-@import "includes/top";
-@import "includes/forms";
-@import "includes/vendor/flickity";
-@import "includes/vendor/flickity-overwrites";
+@use "sass:color";
+@use "reset-css/reset.css";
+@use "hamburgers/dist/hamburgers.css";
+@use "includes/vars" as *;
+@use "includes/buttons";
+@use "includes/headlines";
+@use "includes/top";
+@use "includes/forms";
+@use "flickity/css/flickity.css";
+@use "includes/vendor/flickity-overwrites";
 
 *,
 *:before,
@@ -40,7 +38,7 @@ $hamburger-layer-color: #fff;
     span {
         display: inline-block;
         background-color: #F0CEA0;
-        color: mix(#000,#DB2B39,20%);
+        color: color.mix(#000,#DB2B39,20%);
         padding: 12px 14px;
         border-radius: 5px;
         display: inline-flex;
@@ -48,14 +46,14 @@ $hamburger-layer-color: #fff;
         margin: 0 8px;
 
         &:hover {
-          background-color: mix(#000,#DB2B39,20%);
+          background-color: color.mix(#000,#DB2B39,20%);
           color: #fff;
         }
     }
 }
 
 .announcement--light {
-    background-color: mix(#fff, $errorColor, 15%);
+    background-color: color.mix(#fff, $errorColor, 15%);
 }
 
 body {
@@ -148,7 +146,7 @@ em {
     text-align: center;
     position: relative;
 
-    @include media("<tablet") {
+    @media (max-width: $tablet - 1px) {
         padding-top: 100px;
     }
 
@@ -165,7 +163,16 @@ em {
             float: left;
         }
 
-         @include media(">=tablet") {
+        &-inner,
+        &-inner::before,
+        &-inner::after,
+        &.is-active .hamburger-inner,
+        &.is-active .hamburger-inner::before,
+        &.is-active .hamburger-inner::after {
+            background-color: #fff;
+        }
+
+        @media (min-width: $tablet) {
             display: none;
         }
     }
@@ -198,20 +205,21 @@ em {
     .logo {
         margin-top: 60px;
 
-        @include media(">=tablet") {
+        @media (min-width: $tablet) {
             margin-top: 0;
         }
 
         img {
             width: calc(100vw - 50px);
             max-width: 360px;
+            height: auto;
         }
     }
 }
 
 .nav__main {
 
-    @include media("<tablet") {
+    @media (max-width: $tablet - 1px) {
         position: fixed;
         left: -100vw;
         width: 100vw;
@@ -223,7 +231,7 @@ em {
         align-items: center;
     }
 
-    @include media(">=tablet") {
+    @media (min-width: $tablet) {
         margin-top: 15px;
     }
 
@@ -239,13 +247,13 @@ em {
             border: 2px solid rgba(#fff, .3);
         }
 
-        @include media("<tablet") {
+        @media (max-width: $tablet - 1px) {
             display: block;
             margin: 15px 0;
         }
 
 
-        @include media(">=tablet") {
+        @media (min-width: $tablet) {
             display: inline-block;
             padding: 0 6px;
         }
@@ -257,7 +265,7 @@ em {
         text-decoration: none;
         color: #fff;
 
-        @include media(">=tablet") {
+        @media (min-width: $tablet) {
             font-size: 14px;
         }
     }
@@ -272,7 +280,7 @@ em {
         margin-top: 15px;
     }
 
-    @include media(">=tablet") {
+    @media (min-width: $tablet) {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -301,7 +309,7 @@ em {
         justify-content: flex-start;
         align-items: center;
 
-        @include media(">=desktop") {
+        @media (min-width: $desktop) {
             flex-direction: row;
         }
 
@@ -319,7 +327,7 @@ em {
             margin-top: 25px;
             text-align: center;
 
-            @include media(">=desktop") {
+            @media (min-width: $desktop) {
                 margin-top: 0px;
                 text-align: left;
                 margin-left: 45px;
@@ -436,7 +444,7 @@ em {
     padding-top: 30px;
     padding-bottom: 50px;
 
-    @include media("<tablet") {
+    @media (max-width: $tablet - 1px) {
         section {
             &:last-child {
                 margin-top: 30px;
@@ -444,7 +452,7 @@ em {
         }
     }
 
-    @include media(">=tablet") {
+    @media (min-width: $tablet) {
         .container {
             display: flex;
         }
@@ -467,7 +475,7 @@ em {
 
 
     .about__catering {
-        @include media(">=desktop") {
+        @media (min-width: $desktop) {
             position: relative;
 
             &:before {
@@ -479,7 +487,7 @@ em {
                 transform: translateY(-50%);
                 left: 0;
                 height: 100%;
-                background: mix($tertiaryColor, #000, 80%);
+                background: color.mix($tertiaryColor, #000, 80%);
             }
         }
     }
@@ -490,13 +498,13 @@ em {
     max-width: 1300px;
     margin: 0 auto;
 
-    @include media(">=tablet") {
+    @media (min-width: $tablet) {
         padding: 5px;
         column-count: 3;
         column-gap: 0;
     }
 
-    @include media(">fullwidth") {
+    @media (min-width: $fullwidth + 1px) {
         padding: 40px 0;
     }
 
@@ -505,9 +513,13 @@ em {
         width: 100%;
         display: block;
 
-        @include media(">=tablet") {
+        @media (min-width: $tablet) {
             padding: 5px;
         }
+    }
+
+    img {
+        height: auto;
     }
 }
 
@@ -534,15 +546,15 @@ em {
         color: #AF9164;
         position: relative;
         border-top: none;
-        border-bottom: 1px solid  mix(#AF9164, #333, 10%);
+        border-bottom: 1px solid  color.mix(#AF9164, #333, 10%);
         padding: 5px;
 
         &[data-month] {
             margin-top: 40px;
-            border-top: 1px solid  mix(#AF9164, #333, 10%);
+            border-top: 1px solid  color.mix(#AF9164, #333, 10%);
         }
 
-        @include media(">phone") {
+        @media (min-width: $phone + 1px) {
             flex-direction: row;
         }
 
@@ -552,11 +564,11 @@ em {
             color: #fff;
             flex-shrink: 0;
             
-            @include media("<phone") {
+            @media (max-width: $phone - 1px) {
                 margin: 4px 0;
             }
             
-            @include media(">phone") {
+            @media (min-width: $phone + 1px) {
                 padding-right: 40px;
                 width: 50%;
             }
@@ -565,7 +577,7 @@ em {
         .event {
             text-align: center;
             
-            @include media(">phone") {
+            @media (min-width: $phone + 1px) {
                 text-align: left;
             }
         }
@@ -590,6 +602,10 @@ em {
     color: #333;
     background-color: #fff;
 
+    .menu__text {
+        white-space: pre-line;
+    }
+
     .menu {
         margin-top: 30px;
 
@@ -601,11 +617,11 @@ em {
             background-position: center;
             height: 22px;
 
-            @include media(">=tablet") {
+            @media (min-width: $tablet) {
                 height: 42px
             }
 
-            @include media(">=desktop") {
+            @media (min-width: $desktop) {
                 height: 62px
             }
         }
@@ -618,6 +634,10 @@ em {
         &__intro,
         &__outro {
             margin: 30px 0 40px;
+
+            strong {
+                font-weight: bolder;
+            }
         }
 
         &__outro {
@@ -639,7 +659,7 @@ em {
                 margin-bottom: 20px;
                 width: 100%;
 
-                @include media("<desktop") {
+                @media (max-width: $desktop - 1px) {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
@@ -649,7 +669,7 @@ em {
                     display: block;
                     font-weight: 400;
 
-                    @include media("<desktop") {
+                    @media (max-width: $desktop - 1px) {
                         flex: 0 1 100%;
 
                         &__price {
@@ -659,7 +679,7 @@ em {
                     }
                 }
 
-                @include media(">=desktop") {
+                @media (min-width: $desktop) {
                     align-items: baseline;
                     align-content: flex-start;
                     font-weight: bolder;
@@ -673,12 +693,12 @@ em {
                     }
                 }
 
-                span:last-child {
+                > .item__description {
                     font-weight: 200;
                     font-style: italic;
                     font-size: 14px;
 
-                    @include media(">=desktop") {
+                    @media (min-width: $desktop) {
                         flex: 0 1 100%;
                         text-align: left;
                     }
@@ -692,6 +712,16 @@ em {
             }
         }
     }
+}
+
+.menu-preview-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: #f1f3f4;
+    color: #262626;
 }
 
 .item {

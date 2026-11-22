@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Script from 'next/script'
-import { Merriweather, Amatic_SC } from '@next/font/google'
+import Image from 'next/image'
+import { Merriweather, Amatic_SC } from 'next/font/google'
+import theaterPhoto from '../../public/img/munttheaterWeert.jpg'
 
 const mw = Merriweather({ 
   weight: ['300', '400'], 
@@ -17,17 +18,17 @@ export default function MunttheaterDiner() {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <title>Welkom bij Taberna - Munttheater Diner</title>
         <meta name="description" content="Welkom bij Taberna - Munttheater Diner" />
         <meta name="author" content="Taberna Weert" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={`popup ${mw.className}`}>
-        <img src="/img/munttheaterWeert.jpg" />
+        <Image src={theaterPhoto} alt="Munttheater Weert" sizes="100vw" />
         <div className="container">
           <h1 className={ac.className}>Munttheater Diner</h1>
-          <p>Maak een avondje uit in het Munttheater compleet met het "Munttheater-diner"!</p>
+          <p>Maak een avondje uit in het Munttheater compleet met het &quot;Munttheater-diner&quot;!</p>
           <p>Wij zijn gevestigd op loopafstand van het Munttheater en zorgen ervoor, dat je:</p>
           <ul>
             <li>Kunt genieten van een heerlijk diner dat wij op eigen wijze vormgeven</li>

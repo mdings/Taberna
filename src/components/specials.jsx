@@ -1,3 +1,17 @@
+import Image from "next/image";
+
+function ExternalLinkIcon() {
+  return (
+    <Image
+      style={{ marginLeft: "4px", transform: "translateY(2px)" }}
+      src="/open-external-link-icon.svg"
+      width={12}
+      height={12}
+      alt="Opent in een nieuw venster"
+    />
+  );
+}
+
 function Specials({ font }) {
   return (
     <section className="section__specials">
@@ -7,25 +21,22 @@ function Specials({ font }) {
         <h3>Munttheater diner</h3>
         <p>
           <a
-            href="#"
+            href="/munttheater-diner"
+            target="_blank"
+            rel="noopener"
             onClick={(e) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
               e.preventDefault();
               window.open(
-                "/munttheater-diner",
-                "Munttheater Diner",
-                "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=750"
+                e.currentTarget.href,
+                "_blank",
+                "popup,noopener,width=600,height=750"
               );
             }}
           >
             Maak een avondje uit in het Munttheater compleet met het
-            "Munttheater-diner"!
-            <img
-              style={{ marginLeft: "4px", transform: "translateY(2px)" }}
-              src="/open-external-link-icon.svg"
-              width="12"
-              height="auto"
-              alt="Opens in new tab"
-            ></img>
+            &quot;Munttheater-diner&quot;!
+            <ExternalLinkIcon />
           </a>
         </p>
 
@@ -39,15 +50,9 @@ function Specials({ font }) {
         <h3>Donderdagavond</h3>
         <p>
           3 gangen keuzemenu vanaf 28,- p.p. <br />
-          <a href="/3-gangen-keuzemenu.pdf" target="_blank">
+          <a href="/3-gangen-keuzemenu.pdf" target="_blank" rel="noopener">
             (Bekijk het keuzemenu)
-            <img
-              style={{ marginLeft: "4px", transform: "translateY(2px)" }}
-              src="/open-external-link-icon.svg"
-              width="12"
-              height="auto"
-              alt="Opens in new tab"
-            ></img>
+            <ExternalLinkIcon />
           </a>
         </p>
 
@@ -56,15 +61,9 @@ function Specials({ font }) {
           Typisch Taberna; Avondvullend dineren met kleine gerechtjes (keuze uit
           5 gangen voor 35,- of 6 gangen voor 37,50)
           <br />
-          <a href="/typisch-taberna" target="_blank">
+          <a href="/typisch-taberna" target="_blank" rel="noopener">
             (Bekijk het menu)
-            <img
-              style={{ marginLeft: "4px", transform: "translateY(2px)" }}
-              src="/open-external-link-icon.svg"
-              width="12"
-              height="auto"
-              alt="Opens in new tab"
-            ></img>
+            <ExternalLinkIcon />
           </a>
         </p>
       </div>
