@@ -518,8 +518,19 @@ em {
         }
     }
 
+    picture {
+        break-inside: avoid;
+    }
+
     img {
         height: auto;
+    }
+
+    @media (min-width: $tablet) {
+        .gallery-local-crop img {
+            aspect-ratio: var(--gallery-desktop-ratio);
+            object-fit: cover;
+        }
     }
 }
 
@@ -604,6 +615,10 @@ em {
 
     .menu__text {
         white-space: pre-line;
+    }
+
+    .menu__introduction strong {
+        font-weight: bolder;
     }
 
     .menu {
@@ -714,7 +729,7 @@ em {
     }
 }
 
-.menu-preview-bar {
+.preview-bar {
     display: flex;
     justify-content: center;
     align-items: center;

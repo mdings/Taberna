@@ -1,4 +1,4 @@
-import { menuEntryId } from "@/lib/contentful";
+import { galleryEntryId, homeEntryId, menuEntryId } from "@/lib/contentful";
 import { isPreviewSecret, setPreviewCookie } from "@/lib/contentful-preview";
 
 export default function handler(req, res) {
@@ -15,11 +15,14 @@ export default function handler(req, res) {
     return res.status(503).end("Contentful preview is not configured.");
   }
 
-  const { entry } = req.query;
-  const anchor = typeof entry === "string" && entry !== menuEntryId && /^[\w-]{1,64}$/.test(entry)
-    ? `menu-entry-${entry}`
-    : "menu";
+  const { entry, section } = req.query;
+  const validEntry = typeof entry === "string" && /^[\w-]{1,64}$/.test(entry);
+  const gallery = section === "gallery" || entry === galleryEntryId;
+  const homepage = entry === homeEntryId || (!validEntry && !gallery);
+  const anchor = gallery
+    ? (validEntry && entry !== galleryEntryId ? `gallery-photo-${entry}` : "pictures")
+    : (validEntry && entry !== menuEntryId ? `menu-entry-${entry}` : "menu");
 
   setPreviewCookie(res, true);
-  return res.redirect(307, `/#${anchor}`);
+  return res.redirect(307, homepage ? "/" : `/#${anchor}`);
 }

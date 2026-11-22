@@ -12,9 +12,9 @@ import Gallery from "@/components/gallery";
 import Menu from "@/components/menu";
 import Hours from "@/components/openinghours";
 import Top from "@/components/top";
-import { getRestaurantMenu } from "@/lib/contentful";
+import { getHomeContent } from "@/lib/contentful";
 
-const MenuPreview = dynamic(() => import("@/components/menu-preview"));
+const HomePreview = dynamic(() => import("@/components/home-preview"));
 const LegacyMenu = dynamic(() => import("@/components/legacy-menu"));
 
 const mw = Merriweather({
@@ -28,14 +28,16 @@ const ac = Amatic_SC({
 });
 
 export async function getStaticProps({ draftMode = false }) {
-  const menu = await getRestaurantMenu({ draftMode });
+  const home = await getHomeContent({ draftMode });
   return {
-    props: { menu, draftMode },
-    ...(menu && !draftMode ? { revalidate: 60 } : {}),
+    props: { home, draftMode },
+    ...(home && !draftMode ? { revalidate: 60 } : {}),
   };
 }
 
-export default function Home({ menu, draftMode }) {
+function Homepage({ home, draftMode = false, inspect }) {
+  const { menu, gallery } = home?.fields ?? {};
+
   return (
     <>
       <Head>
@@ -70,12 +72,20 @@ export default function Home({ menu, draftMode }) {
         <Specials font={ac} />
         <About font={ac} />
         <Top />
-        <Gallery />
+        {draftMode && !gallery?.fields ? (
+          <section id="pictures" className="preview-bar" {...inspect?.(home, "gallery")}>
+            Koppel een sfeerimpressie aan de homepage.
+          </section>
+        ) : (
+          <Gallery gallery={gallery} inspect={inspect} />
+        )}
         <Top />
-        {draftMode ? (
-          <MenuPreview menu={menu} font={ac} />
-        ) : menu ? (
-          <Menu menu={menu} font={ac} />
+        {menu?.fields ? (
+          <Menu menu={menu} font={ac} inspect={inspect} />
+        ) : draftMode ? (
+          <section id="menu" className="preview-bar" {...inspect?.(home, "menu")}>
+            Koppel een menukaart aan de homepage.
+          </section>
         ) : (
           <LegacyMenu font={ac} />
         )}
@@ -135,5 +145,15 @@ export default function Home({ menu, draftMode }) {
         )}
       </div>
     </>
+  );
+}
+
+export default function Home({ home, draftMode }) {
+  if (!draftMode) return <Homepage home={home} />;
+
+  return (
+    <HomePreview home={home}>
+      {(updatedHome, inspect) => <Homepage home={updatedHome} draftMode inspect={inspect} />}
+    </HomePreview>
   );
 }

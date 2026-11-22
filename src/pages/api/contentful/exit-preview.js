@@ -8,5 +8,5 @@ export default function handler(req, res) {
   }
 
   setPreviewCookie(res, false);
-  return res.redirect(303, "/#menu");
+  return res.redirect(303, "/");
 }

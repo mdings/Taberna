@@ -100,7 +100,7 @@ function MenuSection({ section, font, inspect, itemAnchorSections }) {
 }
 
 export default function Menu({ menu, font, inspect = noInspector }) {
-  const { title, intro, sections } = menu.fields;
+  const { title, introduction, sections } = menu.fields;
   const resolvedSections = (sections ?? []).filter((section) => section?.fields);
   const itemAnchorSections = new Map();
   for (const section of resolvedSections) {
@@ -115,7 +115,11 @@ export default function Menu({ menu, font, inspect = noInspector }) {
     <section className="section__menu" id="menu">
       <div className="container container--small">
         <h2 className={font.className} {...inspect(menu, "title")}>{title}</h2>
-        {intro && <p className="menu__text" {...inspect(menu, "intro")}>{intro}</p>}
+        {introduction && (
+          <div className="menu__introduction" {...inspect(menu, "introduction")}>
+            {documentToReactComponents(introduction, richTextOptions)}
+          </div>
+        )}
       </div>
       <div className="container" {...inspect(menu, "sections")}>
         {resolvedSections.map((section) => (
